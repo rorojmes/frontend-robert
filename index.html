@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robert Mesa - Bailarín Profesional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fafafa;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('header-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 60px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: textFadeIn 1.5s ease-out forwards;
+        }
+        header p {
+            font-size: 22px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-top: 15px;
+            opacity: 0;
+            animation: textFadeIn 2s ease-out forwards;
+            animation-delay: 0.3s;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            text-align: center;
+            z-index: 10;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #FFD700;
+        }
+        section {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: textFadeInUp 1.2s ease-out forwards;
+        }
+        section:nth-child(2) { animation-delay: 0.2s; }
+        section:nth-child(3) { animation-delay: 0.4s; }
+        section:nth-child(4) { animation-delay: 0.6s; }
+        h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #222;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            text-align: center;
+            opacity: 0;
+            animation: textFadeIn 1s ease-out forwards;
+        }
+        p, li {
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            opacity: 0;
+            animation: textFadeInUp 1.5s ease-out forwards;
+            animation-delay: 0.2s;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        button {
+            display: block;
+            margin: 30px auto;
+            padding: 12px 30px;
+            font-size: 18px;
+            font-weight: 400;
+            background: #FFD700;
+            color: #222;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        button:hover {
+            background: #FFC107;
+            transform: translateY(-3px);
+        }
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            color: #FFC107;
+        }
+        #google_translate_element {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 11;
+        }
+
+        /* Animaciones inspiradas en Humanhood */
+        @keyframes textFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes textFadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 40px; }
+            header p { font-size: 18px; }
+            nav a { margin: 0 10px; font-size: 14px; }
+            h2 { font-size: 28px; }
+            p, li { font-size: 16px; }
+            section { margin: 40px 10px; }
+        }
+        @media (max-width: 480px) {
+            header { height: 80vh; }
+            header h1 { font-size: 30px; }
+            header p { font-size: 14px; }
+            nav { padding: 10px 0; }
+            nav a { display: block; margin: 10px 0; }
+            button { font-size: 16px; padding: 10px 20px; }
+            footer a { display: inline-block; margin: 5px 5px; }
+            #google_translate_element { top: 60px; right: 5px; }
+        }
+    </style>
+</head>
+<body>
+    <div id="google_translate_element"></div>
+    <nav>
+        <a href="#about">Sobre Mí</a>
+        <a href="#experience">Experiencia</a>
+        <a href="#works">Obras</a>
+    </nav>
+    <header>
+        <h1>Robert Mesa</h1>
+        <p>Bailarín Profesional | Coreógrafo</p>
+    </header>
+
+    <section id="about">
+        <h2>Sobre Mí</h2>
+        <p>Soy Robert Mesa, un bailarín profesional con más de 10 años de experiencia en danza contemporánea y clásica. Formado en la prestigiosa Escuela Nacional de Arte (ENA) de Cuba y en Danza Contemporánea de Cuba (DCC), he trabajado con compañías internacionales como Codanza Cuba, Grand Classic Ballet y CreaDance, además de participar en espectáculos destacados como "Havana Nights" en Barcelona. Mi pasión es fusionar técnica y creatividad, ofreciendo clases, coreografías y presentaciones que inspiran.</p>
+    </section>
+
+    <section id="experience">
+        <h2>Experiencia</h2>
+        <ul>
+            <li><strong>Codanza Cuba</strong> - Bailarín, 2019-2023 (5 años)</li>
+            <li><strong>"Havana Nights"</strong> - Barcelona, 2023</li>
+            <li><strong>Grand Classic Ballet</strong> - Bailarín, 2023</li>
+            <li><strong>CreaDance</strong> - Bailarín, 2024</li>
+            <li><strong>Sala Scala</strong> - Bailarín, 2024-2025</li>
+            <li>Talleres con coreógrafos destacados: Radhouanne El Meddeb (2017), Christophe Beránger (2018), Jonathan Pranlas-Descours (2018), Miguel Iglesia (Premio Nacional de Danza), Fleur Darkin (Scottish Dance Theatre), Mal Paso Company (2016), Ramiro Guerra (2016), Pepe Hevia (2019), George Céspedes (2020)</li>
+        </ul>
+        <button onclick="window.location.href='mailto:rorojmes@gmail.com'">Contáctame</button>
+    </section>
+
+    <section id="works">
+        <h2>Obras Bailadas</h2>
+        <ul>
+            <li><strong>Muerte Prevista en el Guión</strong> - Susana Tambutti (Argentina)</li>
+            <li><strong>Casita</strong> - Robi Priore (USA)</li>
+            <li><strong>Tráiler</strong> - Norge Cedeño (Cuba)</li>
+            <li><strong>Árbol de Fuego</strong> - Pepe Hevia (España-Cuba)</li>
+            <li><strong>Tú, Hombre de Dios</strong> - George Céspedes (Cuba)</li>
+            <li><strong>Swan Lake</strong> - Versión Grand Classic Ballet</li>
+            <li><strong>Nutcracker</strong> - Versión Grand Classic Ballet</li>
+            <li><strong>Odissea</strong> - CreaDance, Premios Butaca, Maria Rovira (Barcelona)</li>
+            <li><strong>Sala Scala Choreography</strong> - Raquel Caurín & Alexis Ortega (Canarias)</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2025 Robert Mesa | <a href="mailto:rorojmes@gmail.com">rorojmes@gmail.com</a> | <a href="tel:+34627186103">+34 627 186 103</a> | <a href="https://instagram.com/roro_cuba" target="_blank">@roro_cuba</a></p>
+    </footer>
+
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'es',
+                autoDisplay: true,
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- Conexión al backend -->
+    <script>
+        fetch('https://robert-backend.onrender.com/api/info') // Reemplaza con tu URL real de Render
+            .then(response => response.json())
+            .then(data => console.log(data.message))
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
