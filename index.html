@@ -8,12 +8,15 @@
 </head>
 <body>
     <nav>
-        <a href="index.html">Inicio</a>
-        <a href="about.html">Sobre Mí</a>
-        <a href="portfolio.html">Portafolio</a>
-        <a href="services.html">Servicios</a>
-        <a href="contact.html">Contacto</a>
-        <a href="calendar.html">Calendario</a>
+        <button class="menu-toggle">☰</button>
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="about.html">Sobre Mí</a>
+            <a href="portfolio.html">Portafolio</a>
+            <a href="services.html">Servicios</a>
+            <a href="contact.html">Contacto</a>
+            <a href="calendar.html">Calendario</a>
+        </div>
     </nav>
     <header>
         <h1>Robert Mesa</h1>
@@ -29,6 +32,11 @@
                 document.getElementById('bio').textContent = data.home.bio;
             })
             .catch(error => console.error('Error:', error));
+
+        // Toggle menú móvil
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
     </script>
 </body>
 </html>

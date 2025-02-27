@@ -168,6 +168,35 @@ input, textarea {
     border-radius: 5px;
 }
 
+/* Menú móvil */
+.menu-toggle {
+    display: none; /* Oculto en escritorio */
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    z-index: 11;
+}
+.nav-links {
+    display: flex;
+    justify-content: center;
+}
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px 0;
+}
+
+/* Animaciones */
 @keyframes textFadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -177,6 +206,7 @@ input, textarea {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* Responsive */
 @media (max-width: 768px) {
     header h1, .secondary-header h1 { font-size: 40px; }
     header p, .secondary-header p { font-size: 18px; }
@@ -185,46 +215,23 @@ input, textarea {
     section p, section li { font-size: 16px; }
     section { margin: 40px 10px; }
 }
+
 @media (max-width: 480px) {
     header, .secondary-header { height: 80vh; }
     header h1, .secondary-header h1 { font-size: 30px; }
     header p, .secondary-header p { font-size: 14px; }
     nav { padding: 10px 0; }
-    nav a { display: block; margin: 10px 0; }
-    button, input[type="submit"] { font-size: 16px; padding: 10px 20px; }
-    footer a { display: inline-block; margin: 5px 5px; }
-}
-input, textarea {
-    margin: 10px 0;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-@keyframes textFadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-@keyframes textFadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 768px) {
-    header h1 { font-size: 40px; }
-    header p { font-size: 18px; }
-    nav a { margin: 0 10px; font-size: 14px; }
-    section h2 { font-size: 28px; }
-    section p, section li { font-size: 16px; }
-    section { margin: 40px 10px; }
-}
-@media (max-width: 480px) {
-    header { height: 80vh; }
-    header h1 { font-size: 30px; }
-    header p { font-size: 14px; }
-    nav { padding: 10px 0; }
-    nav a { display: block; margin: 10px 0; }
+    .menu-toggle {
+        display: block; /* Visible en móviles */
+    }
+    .nav-links {
+        display: none; /* Oculto por defecto en móviles */
+    }
+    .nav-links.active a {
+        display: block;
+        margin: 10px 0;
+        font-size: 18px;
+    }
     button, input[type="submit"] { font-size: 16px; padding: 10px 20px; }
     footer a { display: inline-block; margin: 5px 5px; }
 }
