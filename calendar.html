@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robert Mesa - Calendario</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="about.html">Sobre Mí</a>
+        <a href="portfolio.html">Portafolio</a>
+        <a href="services.html">Servicios</a>
+        <a href="contact.html">Contacto</a>
+        <a href="calendar.html">Calendario</a>
+    </nav>
+    <section>
+        <h2 id="calendar-title">Calendario</h2>
+        <p id="events">Eventos</p>
+        <p id="bookings">Reservas</p>
+    </section>
+    <footer>
+        <p>© 2025 Robert Mesa | <a href="mailto:rorojmes@gmail.com">rorojmes@gmail.com</a> | <a href="tel:+34627186103">+34 627 186 103</a> | <a href="https://instagram.com/roro_cuba" target="_blank">@roro_cuba</a></p>
+    </footer>
+    <script>
+        fetch('https://robert-backend.onrender.com/api/content')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('calendar-title').textContent = data.calendar.title;
+                document.getElementById('events').textContent = data.calendar.events;
+                document.getElementById('bookings').textContent = data.calendar.bookings;
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>

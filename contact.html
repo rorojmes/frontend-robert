@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robert Mesa - Contacto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="about.html">Sobre Mí</a>
+        <a href="portfolio.html">Portafolio</a>
+        <a href="services.html">Servicios</a>
+        <a href="contact.html">Contacto</a>
+        <a href="calendar.html">Calendario</a>
+    </nav>
+    <section>
+        <h2 id="contact-title">Contacto</h2>
+        <form action="mailto:rorojmes@gmail.com" method="post" enctype="text/plain">
+            <h3 id="form-title">Formulario</h3>
+            <input type="text" name="name" placeholder="Nombre" required>
+            <input type="email" name="email" placeholder="Correo" required>
+            <textarea name="message" placeholder="Mensaje" rows="5" required></textarea>
+            <input type="submit" value="Enviar">
+        </form>
+        <p>Redes Sociales: <a href="https://instagram.com/roro_cuba" target="_blank">Instagram</a> | <a href="https://facebook.com" target="_blank">Facebook</a> | <a href="https://youtube.com" target="_blank">YouTube</a></p>
+        <p id="email">Correo Electrónico</p>
+    </section>
+    <footer>
+        <p>© 2025 Robert Mesa | <a href="mailto:rorojmes@gmail.com">rorojmes@gmail.com</a> | <a href="tel:+34627186103">+34 627 186 103</a> | <a href="https://instagram.com/roro_cuba" target="_blank">@roro_cuba</a></p>
+    </footer>
+    <script>
+        fetch('https://robert-backend.onrender.com/api/content')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('contact-title').textContent = data.contact.title;
+                document.getElementById('form-title').textContent = data.contact.form;
+                document.getElementById('email').textContent = data.contact.email;
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
