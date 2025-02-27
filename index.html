@@ -76,9 +76,9 @@
             transform: translateY(20px);
             animation: textFadeInUp 1.2s ease-out forwards;
         }
-        section:nth-child(2) { animation-delay: 0.2s; }
-        section:nth-child(3) { animation-delay: 0.4s; }
-        section:nth-child(4) { animation-delay: 0.6s; }
+        section:nth-child(1) { animation-delay: 0.2s; }
+        section:nth-child(2) { animation-delay: 0.4s; }
+        section:nth-child(3) { animation-delay: 0.6s; }
         h2 {
             font-size: 36px;
             font-weight: 700;
@@ -139,12 +139,6 @@
         footer a:hover {
             color: #FFC107;
         }
-        #google_translate_element {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            z-index: 11;
-        }
 
         /* Animaciones inspiradas en Humanhood */
         @keyframes textFadeIn {
@@ -173,12 +167,10 @@
             nav a { display: block; margin: 10px 0; }
             button { font-size: 16px; padding: 10px 20px; }
             footer a { display: inline-block; margin: 5px 5px; }
-            #google_translate_element { top: 60px; right: 5px; }
         }
     </style>
 </head>
 <body>
-    <div id="google_translate_element"></div>
     <nav>
         <a href="#about">Sobre Mí</a>
         <a href="#experience">Experiencia</a>
@@ -190,12 +182,12 @@
     </header>
 
     <section id="about">
-        <h2>Sobre Mí</h2>
-        <p>Soy Robert Mesa, un bailarín profesional con más de 10 años de experiencia en danza contemporánea y clásica. Formado en la prestigiosa Escuela Nacional de Arte (ENA) de Cuba y en Danza Contemporánea de Cuba (DCC), he trabajado con compañías internacionales como Codanza Cuba, Grand Classic Ballet y CreaDance, además de participar en espectáculos destacados como "Havana Nights" en Barcelona. Mi pasión es fusionar técnica y creatividad, ofreciendo clases, coreografías y presentaciones que inspiran.</p>
+        <h2 id="about-title">Sobre Mí</h2>
+        <p id="about-text">Soy Robert Mesa, un bailarín profesional con más de 10 años de experiencia en danza contemporánea y clásica. Formado en la prestigiosa Escuela Nacional de Arte (ENA) de Cuba y en Danza Contemporánea de Cuba (DCC), he trabajado con compañías internacionales como Codanza Cuba, Grand Classic Ballet y CreaDance, además de participar en espectáculos destacados como "Havana Nights" en Barcelona. Mi pasión es fusionar técnica y creatividad, ofreciendo clases, coreografías y presentaciones que inspiran.</p>
     </section>
 
     <section id="experience">
-        <h2>Experiencia</h2>
+        <h2 id="experience-title">Experiencia</h2>
         <ul>
             <li><strong>Codanza Cuba</strong> - Bailarín, 2019-2023 (5 años)</li>
             <li><strong>"Havana Nights"</strong> - Barcelona, 2023</li>
@@ -208,7 +200,7 @@
     </section>
 
     <section id="works">
-        <h2>Obras Bailadas</h2>
+        <h2 id="works-title">Obras Bailadas</h2>
         <ul>
             <li><strong>Muerte Prevista en el Guión</strong> - Susana Tambutti (Argentina)</li>
             <li><strong>Casita</strong> - Robi Priore (USA)</li>
@@ -226,23 +218,17 @@
         <p>© 2025 Robert Mesa | <a href="mailto:rorojmes@gmail.com">rorojmes@gmail.com</a> | <a href="tel:+34627186103">+34 627 186 103</a> | <a href="https://instagram.com/roro_cuba" target="_blank">@roro_cuba</a></p>
     </footer>
 
-    <!-- Google Translate Script -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'es',
-                autoDisplay: true,
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <!-- Conexión al backend -->
+    <!-- Conexión al backend para traducciones -->
     <script>
-        fetch('https://robert-backend.onrender.com/api/info') // Reemplaza con la URL real de Render
+        fetch('https://robert-backend.onrender.com/api/content') // Reemplaza con tu URL real de Render
             .then(response => response.json())
-            .then(data => console.log(data.message))
-            .catch(error => console.error('Error:', error));
+            .then(data => {
+                document.getElementById('about-title').textContent = data.aboutTitle;
+                document.getElementById('about-text').textContent = data.about;
+                document.getElementById('experience-title').textContent = data.experienceTitle;
+                document.getElementById('works-title').textContent = data.worksTitle;
+            })
+            .catch(error => console.error('Error al cargar traducciones:', error));
     </script>
 </body>
 </html>
