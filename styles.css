@@ -5,7 +5,7 @@
 }
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #000; /* Fondo negro como Humanhood */
+    background-color: #000;
     color: #fff;
     line-height: 1.6;
     overflow-x: hidden;
@@ -121,6 +121,9 @@ button, input[type="submit"] {
 button:hover, input[type="submit"]:hover {
     background: #FFC107;
 }
+button:focus, input[type="submit"]:focus {
+    outline: none; /* Elimina el foco amarillo */
+}
 footer {
     background: #000;
     color: #fff;
@@ -176,8 +179,8 @@ input, textarea {
 .menu-toggle {
     display: none;
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 30px; /* Más margen superior */
+    right: 30px; /* Más margen derecho */
     width: 30px;
     height: 20px;
     background: none;
@@ -191,7 +194,7 @@ input, textarea {
     height: 2px;
     background: #fff;
     position: absolute;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease; /* Transición más lenta */
 }
 .menu-toggle span:nth-child(1) { top: 0; }
 .menu-toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
@@ -205,10 +208,13 @@ input, textarea {
 .menu-toggle.active span:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
 }
+.menu-toggle:focus {
+    outline: none; /* Elimina el cuadrito amarillo */
+}
 .nav-links {
     display: flex;
     justify-content: center;
-    transition: transform 0.3s ease-in-out;
+    transition: opacity 0.5s ease-in-out; /* Transición lenta para el contenedor */
 }
 .nav-links.active {
     display: flex;
@@ -223,13 +229,27 @@ input, textarea {
     padding: 20px;
     z-index: 20;
     text-align: center;
+    opacity: 1;
 }
 .nav-links a {
     margin: 15px 0;
     font-size: 20px;
     font-weight: 400;
     padding: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transición para cada pestaña */
 }
+.nav-links.active a {
+    opacity: 1;
+    transform: translateY(0);
+}
+.nav-links.active a:nth-child(1) { transition-delay: 0.1s; }
+.nav-links.active a:nth-child(2) { transition-delay: 0.2s; }
+.nav-links.active a:nth-child(3) { transition-delay: 0.3s; }
+.nav-links.active a:nth-child(4) { transition-delay: 0.4s; }
+.nav-links.active a:nth-child(5) { transition-delay: 0.5s; }
+.nav-links.active a:nth-child(6) { transition-delay: 0.6s; }
 .overlay {
     display: none;
     position: fixed;
@@ -239,9 +259,11 @@ input, textarea {
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
     z-index: 15;
+    transition: opacity 0.5s ease-in-out; /* Transición lenta para el overlay */
 }
 .overlay.active {
     display: block;
+    opacity: 1;
 }
 .blur-active header,
 .blur-active .secondary-header,
@@ -281,11 +303,11 @@ input, textarea {
     }
     .nav-links {
         display: none;
-        transform: translateX(100%);
+        opacity: 0;
     }
     .nav-links.active {
         display: flex;
-        transform: translate(-50%, -50%);
+        opacity: 1;
     }
     button, input[type="submit"] { font-size: 14px; padding: 10px 20px; }
     footer a { display: inline-block; margin: 5px 5px; }
