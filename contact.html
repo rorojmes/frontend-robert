@@ -72,10 +72,26 @@
         const body = document.querySelector('body');
 
         menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            overlay.classList.toggle('active');
+            if (navMenu.classList.contains('active')) {
+                // Cerrar: primero desvanecer pestañas, luego ocultar
+                navMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                body.classList.remove('blur-active');
+                setTimeout(() => {
+                    navMenu.style.display = 'none';
+                    overlay.style.display = 'none';
+                }, 700); // Espera a que termine la transición de 0.7s
+            } else {
+                // Abrir: mostrar primero, luego animar
+                navMenu.style.display = 'block';
+                overlay.style.display = 'block';
+                setTimeout(() => {
+                    navMenu.classList.add('active');
+                    overlay.classList.add('active');
+                    body.classList.add('blur-active');
+                }, 10); // Pequeño retraso para evitar salto
+            }
             menuToggle.classList.toggle('active');
-            body.classList.toggle('blur-active');
         });
     </script>
 </body>
