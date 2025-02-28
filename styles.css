@@ -194,7 +194,7 @@ input, textarea {
     height: 2px;
     background: #fff;
     position: absolute;
-    transition: all 0.5s ease;
+    transition: transform 0.5s ease, opacity 0.5s ease;
 }
 .menu-toggle span:nth-child(1) { top: 0; }
 .menu-toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
@@ -210,8 +210,10 @@ input, textarea {
 }
 .menu-toggle:focus, .menu-toggle:active {
     outline: none !important;
+    background: transparent !important;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
     -moz-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+    tap-highlight-color: rgba(0, 0, 0, 0) !important;
 }
 .nav-links {
     display: flex;
@@ -230,12 +232,15 @@ input, textarea {
     z-index: 20;
     text-align: center;
     opacity: 0;
-    pointer-events: none; /* Evita interacción cuando está oculto */
-    transition: opacity 0.7s ease-in-out;
+    height: 0; /* Evita que ocupe espacio cuando está oculto */
+    overflow: hidden; /* Previene solapamiento durante la transición */
+    transition: opacity 0.7s ease-in-out, height 0s linear 0.7s; /* Height se ajusta después de la opacidad */
 }
 .nav-menu.active {
     opacity: 1;
-    pointer-events: auto; /* Habilita interacción solo cuando está visible */
+    height: auto; /* Se expande al contenido cuando está activo */
+    overflow: visible;
+    transition: opacity 0.7s ease-in-out, height 0s linear 0s;
     display: flex;
     flex-direction: column;
 }
@@ -272,12 +277,10 @@ input, textarea {
     background: rgba(0, 0, 0, 0.8);
     z-index: 15;
     opacity: 0;
-    pointer-events: none;
     transition: opacity 0.7s ease-in-out;
 }
 .overlay.active {
     opacity: 1;
-    pointer-events: auto;
 }
 .blur-active header,
 .blur-active .secondary-header,
@@ -319,7 +322,7 @@ input, textarea {
         display: none;
     }
     .nav-menu {
-        display: flex; /* Siempre presente, pero oculto con opacity */
+        display: flex;
     }
     button, input[type="submit"] { font-size: 14px; padding: 10px 20px; }
     footer a { display: inline-block; margin: 5px 5px; }
