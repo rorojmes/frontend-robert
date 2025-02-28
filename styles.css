@@ -220,7 +220,7 @@ input, textarea {
     opacity: 1;
 }
 .nav-menu {
-    position: fixed;
+    position: absolute; /* Cambiado a absolute para estabilidad */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -231,19 +231,19 @@ input, textarea {
     z-index: 20;
     text-align: center;
     opacity: 0;
-    display: none;
+    display: block; /* Siempre presente, controlado por opacity */
     transition: opacity 0.7s ease-in-out;
 }
 .nav-menu.active {
     opacity: 1;
-    display: flex;
-    flex-direction: column;
+    display: block;
 }
 .nav-menu a {
     margin: 15px 0;
     font-size: 20px;
     font-weight: 400;
     padding: 10px;
+    display: block; /* Cada enlace como bloque */
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
@@ -261,7 +261,8 @@ input, textarea {
 .nav-menu:not(.active) a {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.4s ease-in-out 0s, transform 0.4s ease-in-out 0s;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    transition-delay: 0s;
 }
 .overlay {
     position: fixed;
