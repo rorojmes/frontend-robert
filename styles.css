@@ -236,14 +236,14 @@ input, textarea {
 }
 .nav-menu.active {
     opacity: 1;
-    display: flex;
-    flex-direction: column;
+    display: block; /* Cambiado a block para controlarlo mejor */
 }
 .nav-menu a {
-    margin: 15px 0;
+    display: block; /* Cada enlace en su propia línea */
+    margin: 25px 0; /* Más margen entre elementos */
     font-size: 20px;
     font-weight: 400;
-    padding: 10px;
+    padding: 15px; /* Más relleno para separación */
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
