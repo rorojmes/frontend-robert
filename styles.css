@@ -211,6 +211,7 @@ input, textarea {
 .menu-toggle:focus {
     outline: none !important;
     -webkit-tap-highlight-color: transparent;
+    -moz-tap-highlight-color: transparent;
 }
 .nav-links {
     display: flex;
@@ -218,24 +219,26 @@ input, textarea {
     opacity: 1;
 }
 .nav-menu {
-    transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
-    opacity: 0;
-    transform: scale(0.9);
-}
-.nav-menu.active {
-    display: flex;
-    flex-direction: column;
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%);
     width: 80%;
     max-width: 300px;
     background: transparent;
     padding: 20px;
     z-index: 20;
     text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.7s ease-in-out, visibility 0s linear 0.7s;
+}
+.nav-menu.active {
     opacity: 1;
+    visibility: visible;
+    transition: opacity 0.7s ease-in-out, visibility 0s linear 0s;
+    display: flex;
+    flex-direction: column;
 }
 .nav-menu a {
     margin: 15px 0;
@@ -259,9 +262,9 @@ input, textarea {
 .nav-menu:not(.active) a {
     opacity: 0;
     transform: translateY(20px);
+    transition-delay: 0s;
 }
 .overlay {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -270,11 +273,13 @@ input, textarea {
     background: rgba(0, 0, 0, 0.8);
     z-index: 15;
     opacity: 0;
-    transition: opacity 0.7s ease-in-out;
+    visibility: hidden;
+    transition: opacity 0.7s ease-in-out, visibility 0s linear 0.7s;
 }
 .overlay.active {
-    display: block;
     opacity: 1;
+    visibility: visible;
+    transition: opacity 0.7s ease-in-out, visibility 0s linear 0s;
 }
 .blur-active header,
 .blur-active .secondary-header,
@@ -316,9 +321,6 @@ input, textarea {
         display: none;
     }
     .nav-menu {
-        display: none;
-    }
-    .nav-menu.active {
         display: flex;
     }
     button, input[type="submit"] { font-size: 14px; padding: 10px 20px; }
