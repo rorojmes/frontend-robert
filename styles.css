@@ -231,6 +231,7 @@ input, textarea {
     z-index: 20;
     text-align: center;
     opacity: 0;
+    display: none;
     transition: opacity 0.7s ease-in-out;
 }
 .nav-menu.active {
@@ -271,10 +272,12 @@ input, textarea {
     background: rgba(0, 0, 0, 0.8);
     z-index: 15;
     opacity: 0;
+    display: none;
     transition: opacity 0.7s ease-in-out;
 }
 .overlay.active {
     opacity: 1;
+    display: block;
 }
 .blur-active header,
 .blur-active .secondary-header,
@@ -316,7 +319,7 @@ input, textarea {
         display: none;
     }
     .nav-menu {
-        display: flex;
+        display: block;
     }
     button, input[type="submit"] { font-size: 14px; padding: 10px 20px; }
     footer a { display: inline-block; margin: 5px 5px; }
