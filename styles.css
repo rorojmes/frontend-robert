@@ -194,7 +194,7 @@ input, textarea {
     height: 2px;
     background: #fff;
     position: absolute;
-    transition: transform 0.5s ease, opacity 0.5s ease;
+    transition: all 0.5s ease;
 }
 .menu-toggle span:nth-child(1) { top: 0; }
 .menu-toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
@@ -208,10 +208,10 @@ input, textarea {
 .menu-toggle.active span:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
 }
-.menu-toggle:focus {
+.menu-toggle:focus, .menu-toggle:active {
     outline: none !important;
-    -webkit-tap-highlight-color: transparent;
-    -moz-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+    -moz-tap-highlight-color: rgba(0, 0, 0, 0) !important;
 }
 .nav-links {
     display: flex;
@@ -230,12 +230,12 @@ input, textarea {
     z-index: 20;
     text-align: center;
     opacity: 0;
-    visibility: hidden;
+    pointer-events: none; /* Evita interacción cuando está oculto */
     transition: opacity 0.7s ease-in-out;
 }
 .nav-menu.active {
     opacity: 1;
-    visibility: visible;
+    pointer-events: auto; /* Habilita interacción solo cuando está visible */
     display: flex;
     flex-direction: column;
 }
@@ -258,15 +258,10 @@ input, textarea {
 .nav-menu.active a:nth-child(4) { transition-delay: 0.5s; }
 .nav-menu.active a:nth-child(5) { transition-delay: 0.6s; }
 .nav-menu.active a:nth-child(6) { transition-delay: 0.7s; }
-.nav-menu:not(.active) {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.7s ease-in-out, visibility 0s linear 0.7s;
-}
 .nav-menu:not(.active) a {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out 0s, transform 0.4s ease-in-out 0s;
 }
 .overlay {
     position: fixed;
@@ -277,13 +272,12 @@ input, textarea {
     background: rgba(0, 0, 0, 0.8);
     z-index: 15;
     opacity: 0;
-    visibility: hidden;
+    pointer-events: none;
     transition: opacity 0.7s ease-in-out;
 }
 .overlay.active {
     opacity: 1;
-    visibility: visible;
-    transition: opacity 0.7s ease-in-out;
+    pointer-events: auto;
 }
 .blur-active header,
 .blur-active .secondary-header,
@@ -325,6 +319,8 @@ input, textarea {
         display: none;
     }
     .nav-menu {
-        display: flex;
+        display: flex; /* Siempre presente, pero oculto con opacity */
     }
+    button, input[type="submit"] { font-size: 14px; padding: 10px 20px; }
+    footer a { display: inline-block; margin: 5px 5px; }
 }
