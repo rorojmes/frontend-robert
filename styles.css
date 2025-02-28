@@ -179,8 +179,8 @@ input, textarea {
 .menu-toggle {
     display: none;
     position: fixed;
-    top: 30px; /* Más margen superior */
-    right: 30px; /* Más margen derecho */
+    top: 30px; /* Margen superior */
+    right: 30px; /* Margen derecho */
     width: 30px;
     height: 20px;
     background: none;
@@ -194,7 +194,7 @@ input, textarea {
     height: 2px;
     background: #fff;
     position: absolute;
-    transition: all 0.5s ease; /* Transición más lenta */
+    transition: all 0.5s ease; /* Transición lenta para la X */
 }
 .menu-toggle span:nth-child(1) { top: 0; }
 .menu-toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
@@ -214,7 +214,8 @@ input, textarea {
 .nav-links {
     display: flex;
     justify-content: center;
-    transition: opacity 0.5s ease-in-out; /* Transición lenta para el contenedor */
+    transition: opacity 0.7s ease-in-out; /* Transición más lenta para el menú */
+    opacity: 1;
 }
 .nav-links.active {
     display: flex;
@@ -231,6 +232,9 @@ input, textarea {
     text-align: center;
     opacity: 1;
 }
+.nav-links:not(.active) {
+    opacity: 0; /* Asegura que desaparezca al cerrar */
+}
 .nav-links a {
     margin: 15px 0;
     font-size: 20px;
@@ -238,7 +242,7 @@ input, textarea {
     padding: 10px;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Transición para cada pestaña */
+    transition: opacity 0.4s ease, transform 0.4s ease; /* Transición para cada pestaña */
 }
 .nav-links.active a {
     opacity: 1;
@@ -250,6 +254,11 @@ input, textarea {
 .nav-links.active a:nth-child(4) { transition-delay: 0.4s; }
 .nav-links.active a:nth-child(5) { transition-delay: 0.5s; }
 .nav-links.active a:nth-child(6) { transition-delay: 0.6s; }
+.nav-links:not(.active) a {
+    opacity: 0;
+    transform: translateY(20px);
+    transition-delay: 0s; /* Cierre instantáneo para evitar retraso */
+}
 .overlay {
     display: none;
     position: fixed;
@@ -259,7 +268,8 @@ input, textarea {
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
     z-index: 15;
-    transition: opacity 0.5s ease-in-out; /* Transición lenta para el overlay */
+    transition: opacity 0.7s ease-in-out; /* Transición lenta para el overlay */
+    opacity: 0;
 }
 .overlay.active {
     display: block;
@@ -303,11 +313,9 @@ input, textarea {
     }
     .nav-links {
         display: none;
-        opacity: 0;
     }
     .nav-links.active {
         display: flex;
-        opacity: 1;
     }
     button, input[type="submit"] { font-size: 14px; padding: 10px 20px; }
     footer a { display: inline-block; margin: 5px 5px; }
