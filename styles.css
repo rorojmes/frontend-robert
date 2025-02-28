@@ -5,8 +5,8 @@
 }
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #fafafa;
-    color: #333;
+    background-color: #1a1a1a; /* Fondo oscuro como Humanhood */
+    color: #fff; /* Texto blanco */
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -14,22 +14,23 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 15px 0;
+    background: #000; /* Negro puro como Humanhood */
+    padding: 20px 0; /* Más espacio como Humanhood */
     text-align: center;
-    z-index: 20; /* Aumentamos z-index para que nav esté siempre arriba */
+    z-index: 20;
 }
 nav a {
-    color: white;
+    color: #fff;
     text-decoration: none;
-    margin: 0 20px;
+    margin: 0 25px; /* Más espaciado como Humanhood */
     font-size: 16px;
     font-weight: 400;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px; /* Espaciado elegante */
+    text-transform: uppercase; /* Mayúsculas como Humanhood */
     transition: color 0.3s ease;
 }
 nav a:hover {
-    color: #FFD700;
+    color: #FFD700; /* Dorado al pasar el ratón */
 }
 header {
     height: 100vh;
@@ -40,11 +41,12 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #fff;
     text-align: center;
-    transition: filter 0.3s ease;
     position: relative;
-    z-index: 1; /* Fondo detrás del overlay */
+    z-index: 1;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards; /* Animación de entrada como Humanhood */
 }
 .secondary-header {
     height: 100vh;
@@ -55,58 +57,47 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #fff;
     text-align: center;
-    transition: filter 0.3s ease;
     position: relative;
-    z-index: 1; /* Fondo detrás del overlay */
+    z-index: 1;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
 }
 header h1, .secondary-header h1 {
-    font-size: 60px;
+    font-size: 48px; /* Tamaño como Humanhood */
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    opacity: 0;
-    animation: textFadeIn 1.5s ease-out forwards;
 }
 header p, .secondary-header p {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 300;
     letter-spacing: 1px;
     margin-top: 15px;
-    opacity: 0;
-    animation: textFadeIn 2s ease-out forwards;
-    animation-delay: 0.3s;
 }
 section {
     max-width: 1000px;
-    margin: 60px auto;
+    margin: 80px auto; /* Más margen como Humanhood */
     padding: 20px;
     opacity: 0;
-    transform: translateY(20px);
-    animation: textFadeInUp 1.2s ease-out forwards;
-    transition: filter 0.3s ease;
+    animation: fadeInUp 1.2s ease-out forwards;
     position: relative;
-    z-index: 1; /* Fondo detrás del overlay */
+    z-index: 1;
 }
 section h2 {
     font-size: 36px;
     font-weight: 700;
-    color: #222;
+    color: #fff;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     text-align: center;
-    opacity: 0;
-    animation: textFadeIn 1s ease-out forwards;
 }
 section p, section li {
     font-size: 18px;
     font-weight: 300;
     letter-spacing: 0.5px;
-    opacity: 0;
-    animation: textFadeInUp 1.5s ease-out forwards;
-    animation-delay: 0.2s;
 }
 ul {
     list-style: none;
@@ -116,32 +107,30 @@ button, input[type="submit"] {
     display: block;
     margin: 30px auto;
     padding: 12px 30px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
-    background: #FFD700;
-    color: #222;
+    background: #FFD700; /* Dorado como Humanhood */
+    color: #000;
     border: none;
-    border-radius: 5px;
+    border-radius: 0; /* Bordes rectos como Humanhood */
     cursor: pointer;
     letter-spacing: 1px;
     text-transform: uppercase;
-    transition: background 0.3s ease, transform 0.3s ease;
+    transition: background 0.3s ease;
 }
 button:hover, input[type="submit"]:hover {
     background: #FFC107;
-    transform: translateY(-3px);
 }
 footer {
-    background: #222;
-    color: white;
+    background: #000;
+    color: #fff;
     text-align: center;
     padding: 20px;
     font-size: 14px;
     font-weight: 300;
     letter-spacing: 0.5px;
-    transition: filter 0.3s ease;
     position: relative;
-    z-index: 1; /* Fondo detrás del overlay */
+    z-index: 1;
 }
 footer a {
     color: #FFD700;
@@ -161,7 +150,7 @@ footer a:hover {
 .gallery img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 0; /* Bordes rectos como Humanhood */
     transition: transform 0.4s ease;
 }
 .gallery img:hover {
@@ -177,22 +166,36 @@ input, textarea {
     margin: 10px 0;
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #fff;
+    background: #1a1a1a;
+    color: #fff;
+    border-radius: 0;
 }
 
 /* Menú móvil */
 .menu-toggle {
     display: none;
     position: fixed;
-    top: 15px;
-    right: 15px;
+    top: 20px;
+    right: 20px;
     background: none;
     border: none;
     font-size: 30px;
-    color: white;
+    color: #fff;
     cursor: pointer;
-    z-index: 30; /* Botón siempre arriba */
+    z-index: 30;
+}
+.close-menu {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 31;
 }
 .nav-links {
     display: flex;
@@ -203,20 +206,21 @@ input, textarea {
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 0;
-    right: 0;
-    width: 250px;
-    height: 100%;
-    background: transparent; /* Quitamos fondo negro */
-    padding: 60px 20px 20px;
-    transform: translateX(0);
-    z-index: 20; /* Menú por encima del overlay */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Adaptable a diferentes resoluciones */
+    max-width: 300px;
+    background: transparent;
+    padding: 20px;
+    z-index: 20;
+    text-align: center;
 }
 .nav-links a {
     margin: 15px 0;
-    font-size: 18px;
-    text-align: left;
-    padding-left: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 10px;
 }
 .overlay {
     display: none;
@@ -226,7 +230,7 @@ input, textarea {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
-    z-index: 15; /* Overlay entre contenido y menú */
+    z-index: 15;
 }
 .overlay.active {
     display: block;
@@ -236,34 +240,34 @@ input, textarea {
 .blur-active section,
 .blur-active footer {
     filter: blur(5px);
-    pointer-events: none; /* Desactiva interacción con el contenido detrás */
+    pointer-events: none;
 }
 
-/* Animaciones */
-@keyframes textFadeIn {
+/* Animaciones de Humanhood */
+@keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
-@keyframes textFadeInUp {
+@keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    header h1, .secondary-header h1 { font-size: 40px; }
-    header p, .secondary-header p { font-size: 18px; }
-    nav a { margin: 0 10px; font-size: 14px; }
+    header h1, .secondary-header h1 { font-size: 36px; }
+    header p, .secondary-header p { font-size: 16px; }
+    nav a { margin: 0 15px; font-size: 14px; }
     section h2 { font-size: 28px; }
     section p, section li { font-size: 16px; }
-    section { margin: 40px 10px; }
+    section { margin: 60px 10px; }
 }
 
 @media (max-width: 480px) {
     header, .secondary-header { height: 80vh; }
-    header h1, .secondary-header h1 { font-size: 30px; }
+    header h1, .secondary-header h1 { font-size: 28px; }
     header p, .secondary-header p { font-size: 14px; }
-    nav { padding: 10px 0; }
+    nav { padding: 15px 0; }
     .menu-toggle {
         display: block;
     }
@@ -273,8 +277,11 @@ input, textarea {
     }
     .nav-links.active {
         display: flex;
-        transform: translateX(0);
+        transform: translate(-50%, -50%);
     }
-    button, input[type="submit"] { font-size: 16px; padding: 10px 20px; }
+    .close-menu.active {
+        display: block;
+    }
+    button, input[type="submit"] { font-size: 14px; padding: 10px 20px; }
     footer a { display: inline-block; margin: 5px 5px; }
 }
