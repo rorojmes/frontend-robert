@@ -42,6 +42,7 @@ header {
     align-items: center;
     color: white;
     text-align: center;
+    transition: filter 0.3s ease;
 }
 .secondary-header {
     height: 100vh;
@@ -54,6 +55,7 @@ header {
     align-items: center;
     color: white;
     text-align: center;
+    transition: filter 0.3s ease;
 }
 header h1, .secondary-header h1 {
     font-size: 60px;
@@ -79,6 +81,7 @@ section {
     opacity: 0;
     transform: translateY(20px);
     animation: textFadeInUp 1.2s ease-out forwards;
+    transition: filter 0.3s ease;
 }
 section h2 {
     font-size: 36px;
@@ -130,6 +133,7 @@ footer {
     font-size: 14px;
     font-weight: 300;
     letter-spacing: 0.5px;
+    transition: filter 0.3s ease;
 }
 footer a {
     color: #FFD700;
@@ -171,7 +175,7 @@ input, textarea {
 
 /* Menú móvil */
 .menu-toggle {
-    display: none; /* Oculto en escritorio */
+    display: none;
     position: fixed;
     top: 15px;
     right: 15px;
@@ -212,11 +216,17 @@ input, textarea {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(5px);
     z-index: 10;
 }
 .overlay.active {
     display: block;
+}
+.blur-active header,
+.blur-active .secondary-header,
+.blur-active section,
+.blur-active footer {
+    filter: blur(5px);
+    pointer-events: none; /* Desactiva interacción con el contenido detrás */
 }
 
 /* Animaciones */
@@ -245,10 +255,10 @@ input, textarea {
     header p, .secondary-header p { font-size: 14px; }
     nav { padding: 10px 0; }
     .menu-toggle {
-        display: block; /* Visible en móviles */
+        display: block;
     }
     .nav-links {
-        display: none; /* Oculto por defecto en móviles */
+        display: none;
         transform: translateX(100%);
     }
     .nav-links.active {
