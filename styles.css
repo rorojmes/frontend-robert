@@ -122,7 +122,7 @@ button:hover, input[type="submit"]:hover {
     background: #FFC107;
 }
 button:focus, input[type="submit"]:focus {
-    outline: none; /* Elimina el foco amarillo */
+    outline: none;
 }
 footer {
     background: #000;
@@ -179,8 +179,8 @@ input, textarea {
 .menu-toggle {
     display: none;
     position: fixed;
-    top: 30px; /* Margen superior */
-    right: 30px; /* Margen derecho */
+    top: 30px;
+    right: 30px;
     width: 30px;
     height: 20px;
     background: none;
@@ -194,7 +194,7 @@ input, textarea {
     height: 2px;
     background: #fff;
     position: absolute;
-    transition: all 0.5s ease; /* Transición lenta para la X */
+    transition: all 0.5s ease;
 }
 .menu-toggle span:nth-child(1) { top: 0; }
 .menu-toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
@@ -209,13 +209,13 @@ input, textarea {
     transform: translateY(-9px) rotate(-45deg);
 }
 .menu-toggle:focus {
-    outline: none; /* Elimina el cuadrito amarillo */
+    outline: none;
 }
 .nav-links {
     display: flex;
     justify-content: center;
-    transition: opacity 0.7s ease-in-out; /* Transición más lenta para el menú */
     opacity: 1;
+    transition: opacity 0.7s ease-in-out;
 }
 .nav-links.active {
     display: flex;
@@ -233,7 +233,8 @@ input, textarea {
     opacity: 1;
 }
 .nav-links:not(.active) {
-    opacity: 0; /* Asegura que desaparezca al cerrar */
+    display: none;
+    opacity: 0;
 }
 .nav-links a {
     margin: 15px 0;
@@ -242,23 +243,18 @@ input, textarea {
     padding: 10px;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.4s ease, transform 0.4s ease; /* Transición para cada pestaña */
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 .nav-links.active a {
     opacity: 1;
     transform: translateY(0);
 }
-.nav-links.active a:nth-child(1) { transition-delay: 0.1s; }
-.nav-links.active a:nth-child(2) { transition-delay: 0.2s; }
-.nav-links.active a:nth-child(3) { transition-delay: 0.3s; }
-.nav-links.active a:nth-child(4) { transition-delay: 0.4s; }
-.nav-links.active a:nth-child(5) { transition-delay: 0.5s; }
-.nav-links.active a:nth-child(6) { transition-delay: 0.6s; }
-.nav-links:not(.active) a {
-    opacity: 0;
-    transform: translateY(20px);
-    transition-delay: 0s; /* Cierre instantáneo para evitar retraso */
-}
+.nav-links.active a:nth-child(1) { transition-delay: 0.2s; }
+.nav-links.active a:nth-child(2) { transition-delay: 0.3s; }
+.nav-links.active a:nth-child(3) { transition-delay: 0.4s; }
+.nav-links.active a:nth-child(4) { transition-delay: 0.5s; }
+.nav-links.active a:nth-child(5) { transition-delay: 0.6s; }
+.nav-links.active a:nth-child(6) { transition-delay: 0.7s; }
 .overlay {
     display: none;
     position: fixed;
@@ -268,8 +264,8 @@ input, textarea {
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
     z-index: 15;
-    transition: opacity 0.7s ease-in-out; /* Transición lenta para el overlay */
     opacity: 0;
+    transition: opacity 0.7s ease-in-out;
 }
 .overlay.active {
     display: block;
