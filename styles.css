@@ -209,7 +209,8 @@ input, textarea {
     transform: translateY(-9px) rotate(-45deg);
 }
 .menu-toggle:focus {
-    outline: none;
+    outline: none !important; /* Forzado para eliminar el foco amarillo */
+    -webkit-tap-highlight-color: transparent; /* Elimina el resaltado en móviles */
 }
 .nav-links {
     display: flex;
@@ -230,11 +231,12 @@ input, textarea {
     padding: 20px;
     z-index: 20;
     text-align: center;
-    opacity: 1;
+    opacity: 0; /* Estado inicial para permitir fade-in */
+    animation: fadeInMenu 0.7s ease-in-out forwards;
 }
 .nav-links:not(.active) {
-    display: none;
     opacity: 0;
+    display: none; /* Oculta completamente cuando no está activo */
 }
 .nav-links a {
     margin: 15px 0;
@@ -255,6 +257,11 @@ input, textarea {
 .nav-links.active a:nth-child(4) { transition-delay: 0.5s; }
 .nav-links.active a:nth-child(5) { transition-delay: 0.6s; }
 .nav-links.active a:nth-child(6) { transition-delay: 0.7s; }
+.nav-links:not(.active) a {
+    opacity: 0;
+    transform: translateY(20px);
+    transition-delay: 0s; /* Cierre instantáneo para evitar retraso */
+}
 .overlay {
     display: none;
     position: fixed;
@@ -279,7 +286,7 @@ input, textarea {
     pointer-events: none;
 }
 
-/* Animaciones de Humanhood */
+/* Animaciones */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -287,6 +294,10 @@ input, textarea {
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInMenu {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* Responsive */
