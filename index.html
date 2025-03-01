@@ -56,6 +56,7 @@
         const navMenu = document.querySelector('.nav-menu');
         const overlay = document.querySelector('.overlay');
         const body = document.querySelector('body');
+        const homeTitle = document.querySelector('.home-title');
 
         menuToggle.addEventListener('click', () => {
             if (navMenu.classList.contains('active')) {
@@ -77,6 +78,27 @@
             }
             menuToggle.classList.toggle('active');
         });
+
+        // Animación de fade-in para "La Libertad De Bailar" similar a Humanhood
+        function handleScroll() {
+            const homeTitleTop = homeTitle.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            if (homeTitleTop < windowHeight - 50) { // Aparece cuando está cerca de la vista
+                homeTitle.style.opacity = '1';
+                homeTitle.style.transform = 'translateY(0)';
+            } else {
+                homeTitle.style.opacity = '0';
+                homeTitle.style.transform = 'translateY(20px)';
+            }
+        }
+
+        if (window.innerWidth <= 480) {
+            homeTitle.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            homeTitle.style.opacity = '0';
+            homeTitle.style.transform = 'translateY(20px)';
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // Ejecutar al cargar
+        }
     </script>
 </body>
 </html>
