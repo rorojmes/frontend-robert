@@ -79,25 +79,31 @@
             menuToggle.classList.toggle('active');
         });
 
-        // Animación de fade-in para "La Libertad De Bailar" similar a Humanhood
-        function handleScroll() {
-            const homeTitleTop = homeTitle.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-            if (homeTitleTop < windowHeight - 50) { // Aparece cuando está cerca de la vista
-                homeTitle.style.opacity = '1';
-                homeTitle.style.transform = 'translateY(0)';
-            } else {
-                homeTitle.style.opacity = '0';
-                homeTitle.style.transform = 'translateY(20px)';
-            }
-        }
-
+        // Efecto tipo carrusel para "La Libertad De Bailar" en móviles
         if (window.innerWidth <= 480) {
-            homeTitle.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-            homeTitle.style.opacity = '0';
-            homeTitle.style.transform = 'translateY(20px)';
-            window.addEventListener('scroll', handleScroll);
-            handleScroll(); // Ejecutar al cargar
+            window.addEventListener('scroll', () => {
+                const scrollPosition = window.scrollY;
+                const windowHeight = window.innerHeight;
+                const titleTop = homeTitle.getBoundingClientRect().top;
+
+                // Efecto de desplazamiento hacia arriba y desvanecimiento
+                if (titleTop < windowHeight && titleTop > -homeTitle.offsetHeight) {
+                    const progress = (windowHeight - titleTop) / windowHeight;
+                    homeTitle.style.transform = `translateY(-${progress * 100}px)`;
+                    homeTitle.style.opacity = `${1 - progress}`;
+                } else if (titleTop <= -homeTitle.offsetHeight) {
+                    homeTitle.style.transform = `translateY(-100px)`;
+                    homeTitle.style.opacity = '0';
+                } else {
+                    homeTitle.style.transform = `translateY(0)`;
+                    homeTitle.style.opacity = '1';
+                }
+            });
+
+            // Inicializar la posición y transición
+            homeTitle.style.transition = 'transform 0.3s ease-out, opacity 0.3s ease-out';
+            homeTitle.style.transform = 'translateY(0)';
+            homeTitle.style.opacity = '1';
         }
     </script>
 </body>
