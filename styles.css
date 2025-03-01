@@ -99,6 +99,19 @@ section p, section li {
     font-weight: 300;
     letter-spacing: 0.5px;
 }
+.home-title {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px 0;
+    background: #000;
+    position: relative;
+    z-index: 1;
+    transform: scale(1);
+    transition: transform 0.3s ease-out;
+}
 ul {
     list-style: none;
     padding-left: 0;
@@ -310,21 +323,21 @@ input, textarea {
 @media (max-width: 480px) {
     header, .secondary-header { 
         height: 80vh;
-        justify-content: flex-end; /* Alinea el contenido al final para dejar espacio arriba */
-        padding-bottom: 20px; /* Añade espacio en la parte inferior */
+        justify-content: flex-end;
+        padding-bottom: 20px;
     }
     header h1, .secondary-header h1 { 
         font-size: 28px; 
         position: absolute;
         top: 20px;
-        left: 20px; /* Nombre en la parte superior izquierda */
+        left: 20px;
     }
     header p, .secondary-header p { 
         font-size: 18px; 
         position: relative;
         top: auto;
         left: auto;
-        margin-top: 0; /* Reemplaza el nombre con "Danza Contemporánea" */
+        margin-top: 0;
     }
     nav { padding: 15px 0; }
     .menu-toggle {
@@ -338,4 +351,21 @@ input, textarea {
     }
     button, input[type="submit"] { font-size: 14px; padding: 10px 20px; }
     footer a { display: inline-block; margin: 5px 5px; }
+}
+
+/* Escritorio */
+@media (min-width: 769px) {
+    header {
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+    .home-title {
+        position: absolute;
+        top: 100vh; /* Debajo del header */
+        left: 50px; /* Lateral izquierdo */
+        text-align: left; /* Alineado a la izquierda */
+        padding: 20px 0;
+        font-size: 36px; /* Más grande para destacar */
+    }
 }
