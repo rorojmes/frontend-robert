@@ -39,6 +39,7 @@
         <h1>Robert Mesa</h1>
         <p>Danza Contemporánea</p>
     </header>
+    <section class="home-title">La Libertad De Bailar</section>
     <footer>
         <p>© 2025 Robert Mesa | <a href="mailto:rorojmes@gmail.com">rorojmes@gmail.com</a> | <a href="tel:+34627186103">+34 627 186 103</a> | <a href="https://instagram.com/roro_cuba" target="_blank">@roro_cuba</a></p>
     </footer>
@@ -47,6 +48,7 @@
         const navMenu = document.querySelector('.nav-menu');
         const overlay = document.querySelector('.overlay');
         const body = document.querySelector('body');
+        const homeTitle = document.querySelector('.home-title');
 
         menuToggle.addEventListener('click', () => {
             if (navMenu.classList.contains('active')) {
@@ -68,6 +70,19 @@
             }
             menuToggle.classList.toggle('active');
         });
+
+        // Animación de zoom en versión móvil
+        if (window.innerWidth <= 480) {
+            window.addEventListener('scroll', () => {
+                const scrollPosition = window.scrollY;
+                const scale = Math.max(1, Math.min(1.5, 1 + scrollPosition / 1000)); // Zoom in hasta 1.5x
+                const scaleDown = Math.max(0.8, Math.min(1, 1 - scrollPosition / 1000)); // Zoom out hasta 0.8x
+                homeTitle.style.transform = `scale(${scrollPosition > lastScroll ? scale : scaleDown})`;
+                lastScroll = scrollPosition;
+            });
+        }
+
+        let lastScroll = 0;
     </script>
 </body>
 </html>

@@ -100,7 +100,7 @@ section p, section li {
     letter-spacing: 0.5px;
 }
 .home-title {
-    font-size: 28px;
+    font-size: 36px; /* Más grande como Humanhood */
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -109,8 +109,6 @@ section p, section li {
     background: #000;
     position: relative;
     z-index: 1;
-    transform: scale(1);
-    transition: transform 0.3s ease-out;
 }
 ul {
     list-style: none;
@@ -191,8 +189,8 @@ input, textarea {
 /* Menú móvil */
 .menu-toggle {
     position: fixed;
-    top: 30px;
-    right: 30px;
+    top: 20px; /* Alineado con el nombre */
+    right: 20px;
     width: 30px;
     height: 20px;
     background: transparent;
@@ -323,20 +321,21 @@ input, textarea {
 @media (max-width: 480px) {
     header, .secondary-header { 
         height: 80vh;
-        justify-content: flex-end;
-        padding-bottom: 20px;
+        justify-content: center;
+        padding-bottom: 0;
     }
     header h1, .secondary-header h1 { 
-        font-size: 28px; 
+        font-size: 24px; /* Más pequeño para alinearse con el menú */
         position: absolute;
         top: 20px;
         left: 20px;
     }
     header p, .secondary-header p { 
         font-size: 18px; 
-        position: relative;
-        top: auto;
-        left: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         margin-top: 0;
     }
     nav { padding: 15px 0; }
@@ -364,8 +363,8 @@ input, textarea {
         position: absolute;
         top: 100vh; /* Debajo del header */
         left: 50px; /* Lateral izquierdo */
-        text-align: left; /* Alineado a la izquierda */
+        text-align: left;
         padding: 20px 0;
-        font-size: 36px; /* Más grande para destacar */
+        font-size: 36px;
     }
 }
