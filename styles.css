@@ -34,7 +34,7 @@ nav a:hover {
 }
 header {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('header-bg.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%), url('header-bg.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -50,7 +50,7 @@ header {
 }
 .secondary-header {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('header-2.png');
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%), url('header-2.png');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -240,7 +240,7 @@ input, textarea {
 }
 .nav-menu a {
     display: block;
-    margin: 20px 0; /* Ajustado a 20px */
+    margin: 20px 0;
     font-size: 20px;
     font-weight: 400;
     padding: 15px;
@@ -258,7 +258,6 @@ input, textarea {
 .nav-menu.active a:nth-child(3) { transition-delay: 0.4s; }
 .nav-menu.active a:nth-child(4) { transition-delay: 0.5s; }
 .nav-menu.active a:nth-child(5) { transition-delay: 0.6s; }
-.nav-menu.active a:nth-child(6) { transition-delay: 0.7s; }
 .nav-menu:not(.active) a {
     opacity: 0;
     transform: translateY(20px);
@@ -309,9 +308,24 @@ input, textarea {
 }
 
 @media (max-width: 480px) {
-    header, .secondary-header { height: 80vh; }
-    header h1, .secondary-header h1 { font-size: 28px; }
-    header p, .secondary-header p { font-size: 14px; }
+    header, .secondary-header { 
+        height: 80vh;
+        justify-content: flex-end; /* Alinea el contenido al final para dejar espacio arriba */
+        padding-bottom: 20px; /* Añade espacio en la parte inferior */
+    }
+    header h1, .secondary-header h1 { 
+        font-size: 28px; 
+        position: absolute;
+        top: 20px;
+        left: 20px; /* Nombre en la parte superior izquierda */
+    }
+    header p, .secondary-header p { 
+        font-size: 18px; 
+        position: relative;
+        top: auto;
+        left: auto;
+        margin-top: 0; /* Reemplaza el nombre con "Danza Contemporánea" */
+    }
     nav { padding: 15px 0; }
     .menu-toggle {
         display: block;
