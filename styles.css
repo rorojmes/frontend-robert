@@ -14,8 +14,8 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: transparent; /* Fondo transparente para móviles */
-    padding: 0; /* Sin padding para control total */
+    background: transparent;
+    padding: 0;
     text-align: center;
     z-index: 20;
 }
@@ -64,6 +64,10 @@ header {
     top: 0;
     left: 0;
     z-index: 2;
+    height: 100%; /* Aseguramos que ocupe todo el header */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye contenido */
 }
 .desktop-header {
     display: flex;
@@ -73,7 +77,7 @@ header {
     height: 100%;
 }
 .mobile-header {
-    display: none; /* Oculto por defecto, activado en móvil */
+    display: none;
 }
 section {
     max-width: 1000px;
@@ -356,13 +360,13 @@ input, textarea {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 20px; /* Margen en los bordes */
+        padding: 20px;
         width: 100%;
     }
     header h1 {
         font-size: 24px;
         margin: 0;
-        padding-left: 10px; /* Margen izquierdo */
+        padding-left: 10px;
     }
     header p {
         font-size: 36px; /* Igual que La Libertad De Bailar */
@@ -371,11 +375,13 @@ input, textarea {
         left: 50%;
         transform: translate(-50%, -50%);
         margin: 0;
+        width: 100%; /* Asegura que no se desborde */
+        text-align: center;
     }
     nav { padding: 0; }
     .menu-toggle {
         display: block;
-        margin-right: 10px; /* Margen derecho */
+        margin-right: 10px;
     }
     .nav-links {
         display: none;
