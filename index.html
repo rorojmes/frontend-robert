@@ -19,14 +19,12 @@
             <a href="about.html">Sobre Mí</a>
             <a href="portfolio.html">Portafolio</a>
             <a href="services.html">Servicios</a>
-            <a href="contact.html">Contacto</a>
         </div>
         <div class="nav-menu">
             <a href="index.html">Inicio</a>
             <a href="about.html">Sobre Mí</a>
             <a href="portfolio.html">Portafolio</a>
             <a href="services.html">Servicios</a>
-            <a href="contact.html">Contacto</a>
         </div>
     </nav>
     <div class="overlay"></div>
@@ -86,7 +84,7 @@
                 const windowHeight = window.innerHeight;
                 const titleTop = homeTitle.getBoundingClientRect().top;
 
-                // Efecto de desplazamiento hacia arriba y desvanecimiento
+                // Desplazamiento hacia arriba y desvanecimiento
                 if (titleTop < windowHeight && titleTop > -homeTitle.offsetHeight) {
                     const progress = (windowHeight - titleTop) / windowHeight;
                     homeTitle.style.transform = `translateY(-${progress * 100}px)`;
@@ -100,7 +98,6 @@
                 }
             });
 
-            // Inicializar la posición y transición
             homeTitle.style.transition = 'transform 0.3s ease-out, opacity 0.3s ease-out';
             homeTitle.style.transform = 'translateY(0)';
             homeTitle.style.opacity = '1';

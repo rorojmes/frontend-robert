@@ -198,6 +198,7 @@ input, textarea {
     cursor: pointer;
     z-index: 30;
     position: relative;
+    display: none; /* Oculto por defecto */
 }
 .menu-toggle span {
     display: block;
@@ -335,6 +336,12 @@ input, textarea {
         padding: 20px 0;
         font-size: 36px;
     }
+    .menu-toggle {
+        display: none; /* Aseguramos que no aparezca en escritorio */
+    }
+    .nav-links {
+        display: flex;
+    }
 }
 
 /* Móvil */
@@ -394,8 +401,4 @@ input, textarea {
     }
     button, input[type="submit"] { font-size: 14px; padding: 10px 20px; }
     footer a { display: inline-block; margin: 5px 5px; }
-    .home-title {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
