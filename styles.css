@@ -311,6 +311,14 @@ input, textarea {
 
 /* Escritorio */
 @media (min-width: 769px) {
+    nav {
+        padding: 20px 0; /* Restauradopadding para un espaciado equilibrado */
+        background: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para mejor legibilidad */
+    }
+    nav a {
+        font-size: 18px; /* Tamaño proporcional, más grande pero no exagerado */
+        margin: 0 20px; /* Margen reducido para un diseño más compacto */
+    }
     header {
         height: 100vh;
         justify-content: center;
@@ -323,10 +331,11 @@ input, textarea {
         display: none;
     }
     header h1 {
-        font-size: 48px;
+        font-size: 42px; /* Reducido de 48px para proporción */
+        margin-bottom: 10px; /* Espacio más ajustado */
     }
     header p {
-        font-size: 20px;
+        font-size: 18px; /* Reducido de 20px para equilibrio */
     }
     .home-title {
         position: absolute;
@@ -334,10 +343,23 @@ input, textarea {
         left: 50px;
         text-align: left;
         padding: 20px 0;
-        font-size: 36px;
+        font-size: 32px; /* Reducido de 36px para mejor proporción */
+    }
+    section h2 {
+        font-size: 32px; /* Reducido de 36px para coherencia */
+    }
+    section p, section li {
+        font-size: 16px; /* Reducido de 18px para un texto más limpio */
+    }
+    section {
+        margin: 60px auto; /* Reducido de 80px para un espaciado más ajustado */
+    }
+    footer {
+        font-size: 12px; /* Reducido de 14px para proporción */
+        padding: 15px; /* Reducido de 20px */
     }
     .menu-toggle {
-        display: none; /* Aseguramos que no aparezca en escritorio */
+        display: none;
     }
     .nav-links {
         display: flex;
