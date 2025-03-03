@@ -198,7 +198,7 @@ input, textarea {
     cursor: pointer;
     z-index: 30;
     position: relative;
-    display: none; /* Oculto por defecto */
+    display: none;
 }
 .menu-toggle span {
     display: block;
@@ -311,13 +311,18 @@ input, textarea {
 
 /* Escritorio */
 @media (min-width: 769px) {
+    body {
+        min-height: 100vh; /* Asegura que el contenido ocupe al menos toda la pantalla */
+        display: flex;
+        flex-direction: column;
+    }
     nav {
-        padding: 20px 0; /* Restauradopadding para un espaciado equilibrado */
-        background: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para mejor legibilidad */
+        padding: 20px 0;
+        background: rgba(0, 0, 0, 0.7);
     }
     nav a {
-        font-size: 18px; /* Tamaño proporcional, más grande pero no exagerado */
-        margin: 0 20px; /* Margen reducido para un diseño más compacto */
+        font-size: 18px;
+        margin: 0 20px;
     }
     header {
         height: 100vh;
@@ -331,11 +336,11 @@ input, textarea {
         display: none;
     }
     header h1 {
-        font-size: 42px; /* Reducido de 48px para proporción */
-        margin-bottom: 10px; /* Espacio más ajustado */
+        font-size: 42px;
+        margin-bottom: 10px;
     }
     header p {
-        font-size: 18px; /* Reducido de 20px para equilibrio */
+        font-size: 18px;
     }
     .home-title {
         position: absolute;
@@ -343,20 +348,26 @@ input, textarea {
         left: 50px;
         text-align: left;
         padding: 20px 0;
-        font-size: 32px; /* Reducido de 36px para mejor proporción */
+        font-size: 32px;
     }
     section h2 {
-        font-size: 32px; /* Reducido de 36px para coherencia */
+        font-size: 32px;
     }
     section p, section li {
-        font-size: 16px; /* Reducido de 18px para un texto más limpio */
+        font-size: 16px;
     }
     section {
-        margin: 60px auto; /* Reducido de 80px para un espaciado más ajustado */
+        margin: 60px auto;
     }
     footer {
-        font-size: 12px; /* Reducido de 14px para proporción */
-        padding: 15px; /* Reducido de 20px */
+        font-size: 16px; /* Aumentado de 12px para hacerlo más grande */
+        padding: 30px; /* Aumentado de 15px para más espacio */
+        position: fixed; /* Fijo al fondo */
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9); /* Fondo más opaco para destacar */
+        margin-top: auto; /* Empuja el footer al final */
     }
     .menu-toggle {
         display: none;
@@ -422,5 +433,10 @@ input, textarea {
         display: none;
     }
     button, input[type="submit"] { font-size: 14px; padding: 10px 20px; }
+    footer {
+        font-size: 14px; /* Tamaño original para móvil */
+        padding: 20px; /* Padding original para móvil */
+        position: relative; /* No fijo en móvil */
+    }
     footer a { display: inline-block; margin: 5px 5px; }
 }
