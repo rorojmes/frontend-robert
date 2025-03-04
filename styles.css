@@ -312,9 +312,12 @@ input, textarea {
 /* Escritorio */
 @media (min-width: 769px) {
     body {
-        min-height: 100vh; /* Asegura que el contenido ocupe al menos toda la pantalla */
+        min-height: 100vh; /* Asegura que el contenido ocupe toda la pantalla */
         display: flex;
         flex-direction: column;
+    }
+    main {
+        flex: 1 0 auto; /* Hace que el contenido principal crezca para empujar el footer */
     }
     nav {
         padding: 20px 0;
@@ -360,14 +363,11 @@ input, textarea {
         margin: 60px auto;
     }
     footer {
-        font-size: 16px; /* Aumentado de 12px para hacerlo más grande */
-        padding: 30px; /* Aumentado de 15px para más espacio */
-        position: fixed; /* Fijo al fondo */
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.9); /* Fondo más opaco para destacar */
-        margin-top: auto; /* Empuja el footer al final */
+        font-size: 16px; /* Más grande */
+        padding: 30px; /* Más espacio */
+        position: relative; /* En el flujo normal, no fijo */
+        background: rgba(0, 0, 0, 0.9);
+        flex-shrink: 0; /* Evita que el footer se comprima */
     }
     .menu-toggle {
         display: none;
@@ -434,9 +434,9 @@ input, textarea {
     }
     button, input[type="submit"] { font-size: 14px; padding: 10px 20px; }
     footer {
-        font-size: 14px; /* Tamaño original para móvil */
-        padding: 20px; /* Padding original para móvil */
-        position: relative; /* No fijo en móvil */
+        font-size: 14px;
+        padding: 20px;
+        position: relative;
     }
     footer a { display: inline-block; margin: 5px 5px; }
 }

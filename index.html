@@ -28,24 +28,26 @@
         </div>
     </nav>
     <div class="overlay"></div>
-    <header>
-        <div class="header-content">
-            <div class="desktop-header">
-                <h1>Robert Mesa</h1>
-                <p>Danza Contemporánea</p>
+    <main>
+        <header>
+            <div class="header-content">
+                <div class="desktop-header">
+                    <h1>Robert Mesa</h1>
+                    <p>Danza Contemporánea</p>
+                </div>
+                <div class="mobile-header">
+                    <h1>Robert Mesa</h1>
+                    <button class="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <p><span>Danza</span><span>Contemporánea</span></p>
             </div>
-            <div class="mobile-header">
-                <h1>Robert Mesa</h1>
-                <button class="menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-            <p><span>Danza</span><span>Contemporánea</span></p>
-        </div>
-    </header>
-    <section class="home-title">La Libertad De Bailar</section>
+        </header>
+        <section class="home-title">La Libertad De Bailar</section>
+    </main>
     <footer>
         <p>© 2025 Robert Mesa | <a href="mailto:rorojmes@gmail.com">rorojmes@gmail.com</a> | <a href="tel:+34627186103">+34 627 186 103</a> | <a href="https://instagram.com/roro_cuba" target="_blank">@roro_cuba</a></p>
     </footer>
@@ -77,14 +79,12 @@
             menuToggle.classList.toggle('active');
         });
 
-        // Efecto tipo carrusel para "La Libertad De Bailar" en móviles
         if (window.innerWidth <= 480) {
             window.addEventListener('scroll', () => {
                 const scrollPosition = window.scrollY;
                 const windowHeight = window.innerHeight;
                 const titleTop = homeTitle.getBoundingClientRect().top;
 
-                // Desplazamiento hacia arriba y desvanecimiento
                 if (titleTop < windowHeight && titleTop > -homeTitle.offsetHeight) {
                     const progress = (windowHeight - titleTop) / windowHeight;
                     homeTitle.style.transform = `translateY(-${progress * 100}px)`;
