@@ -29,23 +29,8 @@
     </nav>
     <div class="overlay"></div>
     <main>
-        <div class="secondary-header">
-            <div class="header-content">
-                <div class="desktop-header">
-                    <!-- Eliminado <h1>Robert Mesa</h1> -->
-                </div>
-                <div class="mobile-header">
-                    <!-- Eliminado <h1>Robert Mesa</h1> -->
-                    <button class="menu-toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
-            </div>
-        </div>
         <section>
-            <h2 id="portfolio-title">Portafolio</h2>
+            <h2>Portafolio</h2>
             <div class="gallery">
                 <img src="photo1.jpg" alt="Havana Nights">
                 <img src="photo2.jpg" alt="Odissea">
@@ -61,7 +46,6 @@
         fetch('https://robert-backend.onrender.com/api/content')
             .then(response => response.json())
             .then(data => {
-                document.getElementById('portfolio-title').textContent = data.portfolio.title;
                 document.getElementById('projects').textContent = data.portfolio.projects;
             })
             .catch(error => console.error('Error:', error));
