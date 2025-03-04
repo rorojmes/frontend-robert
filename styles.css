@@ -312,12 +312,12 @@ input, textarea {
 /* Escritorio */
 @media (min-width: 769px) {
     body {
-        min-height: 100vh; /* Asegura que el contenido ocupe toda la pantalla */
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
     }
     main {
-        flex: 1 0 auto; /* Hace que el contenido principal crezca para empujar el footer */
+        flex: 1 0 auto;
     }
     nav {
         padding: 20px 0;
@@ -346,12 +346,12 @@ input, textarea {
         font-size: 18px;
     }
     .home-title {
-        position: absolute;
-        top: 100vh;
-        left: 50px;
-        text-align: left;
+        font-size: 32px; /* Ajustado para escritorio */
+        text-align: center; /* Centrado en escritorio */
         padding: 20px 0;
-        font-size: 32px;
+        background: #000;
+        position: relative; /* En el flujo normal */
+        width: 100%;
     }
     section h2 {
         font-size: 32px;
@@ -363,11 +363,11 @@ input, textarea {
         margin: 60px auto;
     }
     footer {
-        font-size: 16px; /* Más grande */
-        padding: 30px; /* Más espacio */
-        position: relative; /* En el flujo normal, no fijo */
+        font-size: 16px;
+        padding: 30px;
+        position: relative;
         background: rgba(0, 0, 0, 0.9);
-        flex-shrink: 0; /* Evita que el footer se comprima */
+        flex-shrink: 0;
     }
     .menu-toggle {
         display: none;
