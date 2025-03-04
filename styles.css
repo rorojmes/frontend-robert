@@ -340,12 +340,16 @@ input, textarea {
     .mobile-header {
         display: none;
     }
-    header h1 {
-        font-size: 42px;
-        margin-bottom: 10px;
+    header h1 { /* Solo index.html */
+        font-size: 56px; /* Aumentado proporcionalmente de 42px */
+        margin-bottom: 15px;
     }
-    header p {
-        font-size: 18px;
+    header p { /* Solo index.html */
+        font-size: 24px; /* Aumentado proporcionalmente de 18px */
+    }
+    .secondary-header h1, .services-header h1 { /* Sin Danza Contemporánea */
+        font-size: 42px;
+        margin-bottom: 0;
     }
     .home-title {
         font-size: 32px;
@@ -410,7 +414,7 @@ input, textarea {
         margin: 0;
         padding-left: 10px;
     }
-    header p {
+    header p { /* Solo index.html */
         font-size: 36px;
         position: absolute;
         top: 50%;
@@ -429,7 +433,7 @@ input, textarea {
     .services-header {
         background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 90%), url('header-2.png');
         background-size: cover;
-        background-position: center 20%; /* Mueve la imagen hacia abajo */
+        background-position: center 20%;
     }
     nav { padding: 0; }
     .menu-toggle {
