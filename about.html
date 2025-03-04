@@ -32,10 +32,9 @@
         <div class="secondary-header">
             <div class="header-content">
                 <div class="desktop-header">
-                    <!-- Eliminado <h1>Robert Mesa</h1> -->
+                    <!-- Sin Robert Mesa -->
                 </div>
                 <div class="mobile-header">
-                    <!-- Eliminado <h1>Robert Mesa</h1> -->
                     <button class="menu-toggle">
                         <span></span>
                         <span></span>
@@ -45,26 +44,20 @@
             </div>
         </div>
         <section>
-            <h2 id="about-title">Sobre Mí</h2>
-            <p id="story">Historia</p>
-            <p id="education">Formación</p>
-            <p id="achievements">Logros</p>
+            <h2>Sobre Mí</h2>
+            <h3>Historia</h3>
+            <p>Un viaje de nueve años tejido en movimiento. Desde La Habana, donde la danza se respira en cada esquina, hasta los escenarios de Europa, mi cuerpo ha sido el lienzo de una narrativa que trasciende fronteras. La danza contemporánea es mi voz, un diálogo entre la tradición cubana y la exploración universal del ser. Cada pieza, cada paso, es un reflejo de una vida dedicada al arte del movimiento.</p>
+            <h3>Formación</h3>
+            <p>Más de ocho años moldeando el arte en mi cuerpo. Inicié en la Escuela Vocacional de Artes de Cuba durante cinco años, un comienzo que despertó mi esencia. Continué en la Escuela Nacional de Arte (ENA) por tres años, donde la técnica se convirtió en instinto. Mi camino se enriqueció con un año de internado en Danza Contemporánea de Cuba (DCC), un espacio de inmersión total en la danza como expresión viva.</p>
+            <h3>Trayectoria</h3>
+            <p>Una carrera definida por nueve años de creación y escena. He dado vida a coreografías como <em>Muerte Prevista en el Guión</em> de Susana Tambutti (Argentina), <em>Casita</em> de Robi Priore (EE.UU.), <em>Tráiler</em> de Norge Cedeño (Cuba), <em>Árbol de Fuego</em> de Pepe Hevia (España-Cuba), <em>Tú, Hombre de Dios</em> de Jorge Céspedes (Cuba), y las versiones de <em>Swan Lake</em> y <em>Nutcracker</em> del Grand Classic Ballet. En Europa, destaqué en <em>Odissea</em> de Maria Rovira con CreaDance (Premios Butaca, Barcelona) y <em>Sala Scala Choreography</em> de Raquel Caurín y Alexis Ortega (Canarias).  
+            He bailado con compañías como Codanza Cuba (2019-2023), Grand Classic Ballet (2023), CreaDance (2024) y Sala Scala (2024-2025). Mis pasos han resonado en teatros de Cuba y Europa, desde el espectáculo <em>Havana Nights</em> en Barcelona (2023) hasta colaboraciones con coreógrafos de renombre: Radhouanne El Meddeb (Franco-Tunecino, 2017), Christophe Beránger (Francia, 2018), Jonathan Pranlas-Descours (Francia, 2018), Miguel Iglesia (Premio Nacional de Danza), Fleur Darkin (Scottish Dance Theatre), Mal Paso Company (2016), Ramiro Guerra (2016), Pepe Hevia (2019) y Jorge Céspedes (2020).</p>
         </section>
     </main>
     <footer>
         <p>© 2025 Robert Mesa | <a href="mailto:rorojmes@gmail.com">rorojmes@gmail.com</a> | <a href="tel:+34627186103">+34 627 186 103</a> | <a href="https://instagram.com/roro_cuba" target="_blank">@roro_cuba</a></p>
     </footer>
     <script>
-        fetch('https://robert-backend.onrender.com/api/content')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('about-title').textContent = data.about.title;
-                document.getElementById('story').textContent = data.about.story;
-                document.getElementById('education').textContent = data.about.education;
-                document.getElementById('achievements').textContent = data.about.achievements;
-            })
-            .catch(error => console.error('Error:', error));
-
         const menuToggle = document.querySelector('.menu-toggle');
         const navMenu = document.querySelector('.nav-menu');
         const overlay = document.querySelector('.overlay');

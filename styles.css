@@ -99,6 +99,19 @@ section h2 {
     margin-bottom: 30px;
     text-align: center;
 }
+section h3 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-align: center;
+}
+section em {
+    font-style: italic;
+    color: #FFD700; /* Amarillo suave para destacar coreografías */
+}
 section p, section li {
     font-size: 18px;
     font-weight: 300;
@@ -300,6 +313,9 @@ input, textarea {
     filter: blur(5px);
     pointer-events: none;
 }
+.mobile-only {
+    display: none;
+}
 
 /* Animaciones */
 @keyframes fadeIn {
@@ -362,6 +378,9 @@ input, textarea {
     section h2 {
         font-size: 32px;
     }
+    section h3 {
+        font-size: 20px;
+    }
     section p, section li {
         font-size: 16px;
     }
@@ -414,7 +433,8 @@ input, textarea {
         margin: 0;
         padding-left: 10px;
     }
-    header p { /* Solo index.html */
+    .mobile-only {
+        display: flex;
         font-size: 36px;
         position: absolute;
         top: 50%;
@@ -424,10 +444,9 @@ input, textarea {
         width: 100%;
         text-align: center;
         line-height: 1.1;
-        display: flex;
         flex-direction: column;
     }
-    header p span {
+    .mobile-only span {
         display: block;
     }
     .services-header {
@@ -450,26 +469,4 @@ input, textarea {
         position: relative;
     }
     footer a { display: inline-block; margin: 5px 5px; }
-}
-.mobile-only {
-    display: none;
-}
-
-@media (max-width: 480px) {
-    .mobile-only {
-        display: flex;
-        font-size: 36px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        margin: 0;
-        width: 100%;
-        text-align: center;
-        line-height: 1.1;
-        flex-direction: column;
-    }
-    .mobile-only span {
-        display: block;
-    }
 }
