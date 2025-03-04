@@ -44,15 +44,17 @@ header {
 }
 .secondary-header {
     height: 100vh;
+    background: #000; /* Fondo negro para about y portfolio */
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
+}
+.services-header {
+    height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%), url('header-2.png');
     background-size: cover;
     background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    text-align: center;
     position: relative;
     z-index: 1;
     opacity: 0;
@@ -346,11 +348,11 @@ input, textarea {
         font-size: 18px;
     }
     .home-title {
-        font-size: 32px; /* Ajustado para escritorio */
-        text-align: center; /* Centrado en escritorio */
+        font-size: 32px;
+        text-align: center;
         padding: 20px 0;
         background: #000;
-        position: relative; /* En el flujo normal */
+        position: relative;
         width: 100%;
     }
     section h2 {
@@ -388,7 +390,7 @@ input, textarea {
 }
 
 @media (max-width: 480px) {
-    header, .secondary-header { 
+    header, .secondary-header, .services-header { 
         height: 80vh;
         justify-content: center;
         padding-bottom: 0;
@@ -423,6 +425,11 @@ input, textarea {
     }
     header p span {
         display: block;
+    }
+    .services-header {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 90%), url('header-2.png');
+        background-size: cover;
+        background-position: center 20%; /* Mueve la imagen hacia abajo */
     }
     nav { padding: 0; }
     .menu-toggle {
