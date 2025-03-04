@@ -32,6 +32,9 @@ nav a {
 nav a:hover {
     color: #FFD700;
 }
+nav a.active {
+    color: #FFD700; /* Resaltar pestaña activa en dorado */
+}
 header {
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%), url('header-bg.jpg');
@@ -83,9 +86,9 @@ header {
 }
 section {
     max-width: 1000px;
-    margin: 0 auto; /* Sin margen superior */
+    margin: 0 auto;
     padding: 20px;
-    padding-top: 80px; /* Espacio para el nav fijo */
+    padding-top: 80px;
     opacity: 0;
     animation: fadeInUp 1.2s ease-out forwards;
     position: relative;
@@ -111,13 +114,13 @@ section h3 {
 }
 section em {
     font-style: italic;
-    color: #FFD700; /* Amarillo suave para destacar coreografías */
+    color: #FFD700;
 }
 section p, section li {
     font-size: 18px;
     font-weight: 300;
     letter-spacing: 0.5px;
-    margin-bottom: 30px; /* Más espaciado entre párrafos */
+    margin-bottom: 30px;
 }
 .home-title {
     font-size: 36px;
@@ -359,13 +362,13 @@ input, textarea {
         display: none;
     }
     header h1 { /* Solo index.html */
-        font-size: 56px; /* Aumentado proporcionalmente de 42px */
+        font-size: 56px;
         margin-bottom: 15px;
     }
     header p { /* Solo index.html */
-        font-size: 24px; /* Aumentado proporcionalmente de 18px */
+        font-size: 24px;
     }
-    .secondary-header h1, .services-header h1 { /* Sin Danza Contemporánea */
+    .secondary-header h1, .services-header h1 {
         font-size: 42px;
         margin-bottom: 0;
     }
@@ -385,11 +388,11 @@ input, textarea {
     }
     section p, section li {
         font-size: 16px;
-        margin-bottom: 40px; /* Más espaciado en escritorio */
+        margin-bottom: 40px;
     }
     section {
         margin: 0 auto;
-        padding-top: 100px; /* Más espacio en escritorio para el nav */
+        padding-top: 100px;
     }
     footer {
         font-size: 16px;
@@ -432,7 +435,7 @@ input, textarea {
         padding: 20px;
         width: 100%;
     }
-    header h1 {
+    .mobile-header h1 {
         font-size: 24px;
         margin: 0;
         padding-left: 10px;
