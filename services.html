@@ -18,7 +18,7 @@
             <a href="index.html">Inicio</a>
             <a href="about.html">Sobre Mí</a>
             <a href="portfolio.html">Portafolio</a>
-            <a href="services.html">Servicios</a>
+            <a href="services.html" class="active">Servicios</a>
         </div>
         <div class="nav-menu">
             <a href="index.html">Inicio</a>
@@ -29,13 +29,13 @@
     </nav>
     <div class="overlay"></div>
     <main>
-        <div class="services-header">
+        <header>
             <div class="header-content">
                 <div class="desktop-header">
-                    <!-- Eliminado <h1>Robert Mesa</h1> -->
+                    <!-- Sin Robert Mesa -->
                 </div>
                 <div class="mobile-header">
-                    <!-- Eliminado <h1>Robert Mesa</h1> -->
+                    <h1>Servicios</h1>
                     <button class="menu-toggle">
                         <span></span>
                         <span></span>
@@ -43,9 +43,9 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </header>
         <section>
-            <h2 id="services-title">Servicios</h2>
+            <h2>Servicios</h2>
             <p id="classes">Clases</p>
             <p id="choreography">Coreografías</p>
         </section>
@@ -86,7 +86,7 @@
                     body.classList.add('blur-active');
                 }, 10);
             }
-            menuToggle.classList.toggle('active');
+            menuToggle.classList.toggle('active'); // Añadido para transformar en X
         });
     </script>
 </body>

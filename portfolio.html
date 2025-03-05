@@ -26,26 +26,27 @@
             <a href="portfolio.html">Portafolio</a>
             <a href="services.html">Servicios</a>
         </div>
-        <div class="mobile-header">
-            <h1>Portafolio</h1>
-            <button class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
     </nav>
     <div class="overlay"></div>
     <main>
-        <section>
-            <!-- Eliminado <h2>Portafolio</h2> para escritorio -->
-            <div class="gallery">
-                <img src="photo1.jpg" alt="Havana Nights">
-                <img src="photo2.jpg" alt="Odissea">
-                <img src="photo3.jpg" alt="Sala Scala">
+        <header>
+            <div class="mobile-header">
+                <h1>Portafolio</h1>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-            <p id="projects">Proyectos</p>
-        </section>
+            <section>
+                <div class="gallery">
+                    <img src="photo1.jpg" alt="Havana Nights">
+                    <img src="photo2.jpg" alt="Odissea">
+                    <img src="photo3.jpg" alt="Sala Scala">
+                </div>
+                <p id="projects">Proyectos</p>
+            </section>
+        </header>
     </main>
     <footer>
         <p>© 2025 Robert Mesa | <a href="mailto:rorojmes@gmail.com">rorojmes@gmail.com</a> | <a href="tel:+34627186103">+34 627 186 103</a> | <a href="https://instagram.com/roro_cuba" target="_blank">@roro_cuba</a></p>
@@ -81,7 +82,7 @@
                     body.classList.add('blur-active');
                 }, 10);
             }
-            menuToggle.classList.toggle('active');
+            menuToggle.classList.toggle('active'); // Añadido para transformar en X
         });
     </script>
 </body>
