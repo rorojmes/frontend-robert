@@ -418,15 +418,6 @@ input, textarea {
 }
 
 /* Móvil */
-@media (max-width: 768px) {
-    .header-index h1, .secondary-header h1 { font-size: 36px; }
-    .header-index p, .secondary-header p { font-size: 16px; }
-    nav a { margin: 0 15px; font-size: 14px; }
-    section h2 { font-size: 28px; }
-    section p, section li { font-size: 16px; }
-    section { margin: 0 10px; }
-}
-
 @media (max-width: 480px) {
     .header-index, .secondary-header, .services-header { 
         height: 80vh;
@@ -450,7 +441,7 @@ input, textarea {
     }
     .mobile-only {
         display: flex;
-        font-size: 36px;
+        font-size: 42px; /* Aumentado de 36px a 42px */
         position: absolute;
         top: 50%;
         left: 50%;
@@ -473,7 +464,7 @@ input, textarea {
     .menu-toggle {
         display: block;
         margin-top: 20px; /* Margen superior */
-        margin-right: 20px; /* Margen derecho */
+        margin-right: 40px; /* Aumentado de 20px a 40px */
     }
     .nav-links {
         display: none;
