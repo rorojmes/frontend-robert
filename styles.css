@@ -152,7 +152,6 @@ section p, section li {
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    text-align: center;
     animation: marquee 10s linear infinite;
 }
 ul {
@@ -499,4 +498,22 @@ input, textarea {
         position: relative;
     }
     footer a { display: inline-block; margin: 5px 5px; }
+    .home-title {
+        padding: 10px 0;
+        display: block;
+    }
+    .marquee-container {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
+    }
+    .marquee-text {
+        display: inline-block;
+        font-size: 36px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        animation: marquee 10s linear infinite;
+    }
 }
