@@ -59,7 +59,6 @@
         const navMenu = document.querySelector('.nav-menu');
         const overlay = document.querySelector('.overlay');
         const body = document.querySelector('body');
-        const homeTitle = document.querySelector('.home-title');
 
         menuToggle.addEventListener('click', () => {
             if (navMenu.classList.contains('active')) {
@@ -81,30 +80,6 @@
             }
             menuToggle.classList.toggle('active');
         });
-
-        if (window.innerWidth <= 480) {
-            window.addEventListener('scroll', () => {
-                const scrollPosition = window.scrollY;
-                const windowHeight = window.innerHeight;
-                const titleTop = homeTitle.getBoundingClientRect().top;
-
-                if (titleTop < windowHeight && titleTop > -homeTitle.offsetHeight) {
-                    const progress = (windowHeight - titleTop) / windowHeight;
-                    homeTitle.style.transform = `translateY(-${progress * 100}px)`;
-                    homeTitle.style.opacity = `${1 - progress}`;
-                } else if (titleTop <= -homeTitle.offsetHeight) {
-                    homeTitle.style.transform = `translateY(-100px)`;
-                    homeTitle.style.opacity = '0';
-                } else {
-                    homeTitle.style.transform = `translateY(0)`;
-                    homeTitle.style.opacity = '1';
-                }
-            });
-
-            homeTitle.style.transition = 'transform 0.3s ease-out, opacity 0.3s ease-out';
-            homeTitle.style.transform = 'translateY(0)';
-            homeTitle.style.opacity = '1';
-        }
     </script>
 </body>
 </html>
