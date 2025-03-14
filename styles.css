@@ -152,7 +152,7 @@ section p, section li {
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #FFD700; /* Resaltar solo las letras en dorado */
+    color: #FFD700; /* Letras en dorado */
     animation: marquee 20s linear infinite; /* Velocidad ajustada a 20s */
 }
 ul {
@@ -515,7 +515,7 @@ input, textarea {
         font-weight: 700;
         letter-spacing: 2px;
         text-transform: uppercase;
-        color: #FFD700; /* Resaltar solo las letras en dorado */
+        color: #FFD700; /* Letras en dorado */
         animation: marquee 20s linear infinite; /* Velocidad ajustada a 20s */
     }
 }
