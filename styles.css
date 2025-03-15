@@ -486,7 +486,7 @@ input, textarea {
     }
     .mobile-only {
         display: flex;
-        font-size: 56px; /* Mantenido como está, pero podemos aumentarlo si deseas */
+        font-size: 72px; /* Aumentado de 56px a 72px para mayor prominencia */
         position: absolute;
         top: 50%;
         left: 50%;
@@ -532,12 +532,12 @@ input, textarea {
         width: 100%;
     }
     .marquee-text {
-        font-size: 36px; /* Restaurado al tamaño original en móvil */
+        font-size: 36px;
         padding-right: 5ch;
     }
     .marquee-wrapper::before,
     .marquee-wrapper::after {
-        font-size: 36px; /* Restaurado al tamaño original en móvil */
+        font-size: 36px;
         padding-right: 5ch;
     }
 }
