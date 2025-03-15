@@ -486,7 +486,7 @@ input, textarea {
     }
     .mobile-only {
         display: flex;
-        font-size: 100px !important; /* Aumentado a 100px con !important para forzar el cambio */
+        font-size: 52px; /* Ajustado a 52px como pediste */
         position: absolute;
         top: 50%;
         left: 50%;
