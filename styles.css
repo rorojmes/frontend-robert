@@ -133,7 +133,7 @@ section p, section li {
     margin-bottom: 30px;
 }
 .home-title {
-    background: #000; /* Fondo negro restaurado */
+    background: #000;
     position: relative;
     z-index: 5;
     padding: 20px 0;
@@ -152,8 +152,8 @@ section p, section li {
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #FFD700; /* Letras en dorado */
-    animation: marquee 20s linear infinite; /* Velocidad ajustada a 20s */
+    color: #FFD700;
+    animation: marquee 20s linear infinite;
 }
 ul {
     list-style: none;
@@ -515,7 +515,7 @@ input, textarea {
         font-weight: 700;
         letter-spacing: 2px;
         text-transform: uppercase;
-        color: #FFD700; /* Letras en dorado */
-        animation: marquee 20s linear infinite; /* Velocidad ajustada a 20s */
+        color: #FFD700;
+        animation: marquee 20s linear infinite;
     }
 }
