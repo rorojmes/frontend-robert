@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Robert Mesa - Bailarín Profesional</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         .menu-toggle {
             -webkit-tap-highlight-color: transparent !important;
@@ -14,64 +13,79 @@
     </style>
 </head>
 <body>
-    <header class="header-index">
-        <div class="header-content">
-            <nav>
-                <div class="nav-links">
-                    <a href="index.html" class="active">Inicio</a>
-                    <a href="sobre-mi.html">Sobre Mí</a>
-                    <a href="servicios.html">Servicios</a>
-                    <a href="galeria.html">Galería</a>
-                    <a href="contacto.html">Contacto</a>
-                </div>
-                <button class="menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <div class="nav-menu">
-                    <a href="index.html">Inicio</a>
-                    <a href="sobre-mi.html">Sobre Mí</a>
-                    <a href="servicios.html">Servicios</a>
-                    <a href="galeria.html">Galería</a>
-                    <a href="contacto.html">Contacto</a>
-                </div>
-            </nav>
-            <div class="desktop-header">
-                <h1>Robert Mesa</h1>
-                <p>Bailarín Profesional</p>
-            </div>
-            <div class="mobile-header">
-                <h1>Robert Mesa</h1>
-                <div class="mobile-only">
-                    <span>Bailarín</span>
-                    <span>Profesional</span>
-                </div>
-            </div>
+    <nav>
+        <div class="nav-links">
+            <a href="index.html" class="active">Inicio</a>
+            <a href="about.html">Sobre Mí</a>
+            <a href="portfolio.html">Portafolio</a>
+            <a href="services.html">Servicios</a>
         </div>
-    </header>
+        <div class="nav-menu">
+            <a href="index.html">Inicio</a>
+            <a href="about.html">Sobre Mí</a>
+            <a href="portfolio.html">Portafolio</a>
+            <a href="services.html">Servicios</a>
+        </div>
+        <button class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+    <div class="overlay"></div>
     <main>
-        <div class="home-title">
+        <header class="header-index">
+            <div class="header-content">
+                <div class="desktop-header">
+                    <h1>Robert Mesa</h1>
+                    <p>Bailarín Profesional</p>
+                </div>
+                <div class="mobile-header">
+                    <h1>Robert Mesa</h1>
+                </div>
+                <p class="mobile-only"><span>Bailarín</span><span>Profesional</span></p>
+            </div>
+        </header>
+        <section class="home-title">
             <div class="marquee-container">
                 <div class="marquee-wrapper">
                     <span class="marquee-text">La Libertad De Bailar</span>
                 </div>
             </div>
-        </div>
+        </section>
         <section class="home-summary">
-            <h2>¡Bienvenidos a mi mundo!</h2>
-            <p>Soy Robert Mesa, bailarín profesional con años de experiencia en el arte del movimiento. Mi pasión es transmitir emociones a través del baile, combinando técnica, creatividad y dedicación. Aquí encontrarás todo sobre mi trayectoria, servicios y cómo puedo ayudarte a descubrir la libertad de bailar.</p>
-            <button onclick="window.location.href='sobre-mi.html'">Conoce Más</button>
+            <p>Robert Mesa, bailarín contemporáneo con más de nueve años de trayectoria, fusiona la esencia de la danza cubana con la danza moderna actual. Formado en la Escuela Vocacional de Artes de Cuba, la Escuela Nacional de Arte (ENA) y Danza Contemporánea de Cuba, ha colaborado con coreógrafos destacados y ha bailado en escenarios de Cuba y Europa obras de Danza Contemporánea, Ballet y Comercial Dance.</p>
         </section>
     </main>
     <footer>
-        <p>&copy; 2025 Robert Mesa. Todos los derechos reservados.</p>
-        <p>
-            <a href="https://www.instagram.com/robertmesa_dancer/" target="_blank">Instagram</a> | 
-            <a href="mailto:info@robertmesa.com">Email</a>
-        </p>
+        <p>© 2025 Robert Mesa | <a href="mailto:rorojmes@gmail.com">rorojmes@gmail.com</a> | <a href="tel:+34627186103">+34 627 186 103</a> | <a href="https://instagram.com/roro_cuba" target="_blank">@roro_cuba</a></p>
     </footer>
-    <div class="overlay"></div>
-    <script src="script.js"></script>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const overlay = document.querySelector('.overlay');
+        const body = document.querySelector('body');
+
+        menuToggle.addEventListener('click', () => {
+            if (navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                body.classList.remove('blur-active');
+                setTimeout(() => {
+                    navMenu.style.display = 'none';
+                    overlay.style.display = 'none';
+                }, 700);
+            } else {
+                navMenu.style.display = 'block';
+                overlay.style.display = 'block';
+                setTimeout(() => {
+                    navMenu.classList.add('active');
+                    overlay.classList.add('active');
+                    body.classList.add('blur-active');
+                }, 10);
+            }
+            menuToggle.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
