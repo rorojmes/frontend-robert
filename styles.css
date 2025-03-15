@@ -147,7 +147,7 @@ section p, section li {
 }
 .marquee-wrapper {
     display: inline-block;
-    animation: marquee 15s linear infinite; /* Ajustado a 15s como en humanhood.net */
+    animation: marquee 15s linear infinite;
 }
 .marquee-text {
     display: inline-block;
@@ -156,7 +156,7 @@ section p, section li {
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #FFD700;
-    padding-right: 20ch; /* 20 espacios entre instancias */
+    padding-right: 5ch; /* Valor base para móvil */
 }
 .marquee-wrapper::before,
 .marquee-wrapper::after {
@@ -166,10 +166,10 @@ section p, section li {
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #FFD700;
-    padding-right: 20ch; /* 20 espacios entre instancias */
+    padding-right: 5ch; /* Valor base para móvil */
 }
 .marquee-wrapper::before {
-    padding-right: 20ch;
+    padding-right: 5ch;
 }
 ul {
     list-style: none;
@@ -369,7 +369,7 @@ input, textarea {
 }
 @keyframes marquee {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-33.33%); } /* Ajustado para tres instancias visibles */
+    100% { transform: translateX(-33.33%); } /* Tres instancias visibles */
 }
 
 /* Escritorio */
@@ -414,10 +414,12 @@ input, textarea {
     }
     .marquee-text {
         font-size: 64px; /* Tamaño duplicado */
+        padding-right: 7ch; /* 7 espacios para escritorio */
     }
     .marquee-wrapper::before,
     .marquee-wrapper::after {
         font-size: 64px; /* Tamaño duplicado */
+        padding-right: 7ch; /* 7 espacios para escritorio */
     }
     section h2 {
         font-size: 32px;
@@ -531,9 +533,11 @@ input, textarea {
     }
     .marquee-text {
         font-size: 72px; /* Tamaño duplicado */
+        padding-right: 5ch; /* 5 espacios para móvil */
     }
     .marquee-wrapper::before,
     .marquee-wrapper::after {
         font-size: 72px; /* Tamaño duplicado */
+        padding-right: 5ch; /* 5 espacios para móvil */
     }
 }
