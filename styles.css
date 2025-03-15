@@ -146,14 +146,27 @@ section p, section li {
     overflow: hidden;
     width: 100%;
 }
+.marquee-wrapper {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+}
 .marquee-text {
     display: inline-block;
-    font-size: 36px;
+    font-size: 72px;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #FFD700;
-    animation: marquee 20s linear infinite;
+    padding-right: 20ch; /* 20 espacios equivalentes */
+}
+.marquee-wrapper::after {
+    content: "La Libertad De Bailar";
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #FFD700;
+    padding-left: 20ch; /* 20 espacios equivalentes */
 }
 ul {
     list-style: none;
@@ -352,8 +365,8 @@ input, textarea {
     to { opacity: 1; transform: translateY(0); }
 }
 @keyframes marquee {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Mueve solo la mitad del ancho para continuidad */
 }
 
 /* Escritorio */
@@ -397,7 +410,10 @@ input, textarea {
         margin-bottom: 0;
     }
     .marquee-text {
-        font-size: 32px;
+        font-size: 64px; /* Tamaño duplicado */
+    }
+    .marquee-wrapper::after {
+        font-size: 64px; /* Tamaño duplicado */
     }
     section h2 {
         font-size: 32px;
@@ -510,12 +526,9 @@ input, textarea {
         width: 100%;
     }
     .marquee-text {
-        display: inline-block;
-        font-size: 36px;
-        font-weight: 700;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: #FFD700;
-        animation: marquee 20s linear infinite;
+        font-size: 72px; /* Tamaño duplicado */
+    }
+    .marquee-wrapper::after {
+        font-size: 72px; /* Tamaño duplicado */
     }
 }
