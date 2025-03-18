@@ -50,8 +50,15 @@
         }
         /* Media query para móvil (hasta 768px) */
         @media (max-width: 768px) {
+            .services-header {
+                margin-bottom: 0; /* Elimina cualquier margen inferior del header */
+            }
             section {
                 padding-top: 0; /* Sin padding-top en móvil */
+                margin-top: 0; /* Elimina cualquier margen superior */
+            }
+            .mobile-only {
+                margin-top: 0; /* Asegura que el h2 no tenga margen superior */
             }
         }
         /* Media query para escritorio (más de 768px) */
@@ -65,6 +72,9 @@
             }
             .services-header .desktop-header h1 {
                 font-size: 36px; /* Ajustado para que "EXPLORA MI MUNDO EN MOVIMIENTO" se vea bien */
+            }
+            .mobile-only {
+                display: none; /* Oculta el h2 en escritorio */
             }
         }
     </style>
