@@ -12,7 +12,7 @@
         }
         /* Estilos específicos para services.html */
         section {
-            padding-top: 20px; /* Por defecto para escritorio */
+            padding-top: 0; /* Por defecto sin espacio en escritorio */
         }
         .service-item {
             margin-bottom: 40px;
@@ -51,17 +51,20 @@
         /* Media query para móvil (hasta 768px) */
         @media (max-width: 768px) {
             section {
-                padding-top: 0; /* Sin padding-top en móvil para el h2 */
+                padding-top: 0; /* Sin padding-top en móvil */
             }
         }
         /* Media query para escritorio (más de 768px) */
         @media (min-width: 769px) {
             .services-header .desktop-header {
                 position: absolute;
-                top: 75%; /* Lo coloca en la mitad inferior de la mitad inferior */
+                top: 75%; /* Centro de la mitad inferior de la mitad de la foto */
                 left: 50%;
                 transform: translate(-50%, -50%);
                 width: 100%;
+            }
+            .services-header .desktop-header h1 {
+                font-size: 36px; /* Ajustado para que "EXPLORA MI MUNDO EN MOVIMIENTO" se vea bien */
             }
         }
     </style>
@@ -91,7 +94,7 @@
         <header class="services-header">
             <div class="header-content">
                 <div class="desktop-header">
-                    <h1>Servicios</h1>
+                    <h1>Explora Mi Mundo en Movimiento</h1>
                 </div>
                 <div class="mobile-header">
                     <h1>Servicios</h1>
@@ -99,7 +102,7 @@
             </div>
         </header>
         <section>
-            <h2>Explora Mi Mundo en Movimiento</h2>
+            <h2 class="mobile-only">Explora Mi Mundo en Movimiento</h2>
             <div class="service-item">
                 <h3>Clases de Danza</h3>
                 <p>Descubre tu libertad en el movimiento. Clases que fusionan la técnica cubana con la danza contemporánea, desde sesiones privadas para perfeccionar tu arte hasta grupos que despiertan la pasión por bailar.</p>
