@@ -12,7 +12,7 @@
         }
         /* Estilos específicos para services.html */
         section {
-            padding-top: 20px; /* Reducimos el padding-top para acercar el h2 al header */
+            padding-top: 20px; /* Por defecto para escritorio */
         }
         .service-item {
             margin-bottom: 40px;
@@ -47,6 +47,22 @@
             width: 30px; /* Tamaño de la imagen dentro del botón */
             height: 30px;
             vertical-align: middle;
+        }
+        /* Media query para móvil (hasta 768px) */
+        @media (max-width: 768px) {
+            section {
+                padding-top: 0; /* Sin padding-top en móvil para el h2 */
+            }
+        }
+        /* Media query para escritorio (más de 768px) */
+        @media (min-width: 769px) {
+            .services-header .desktop-header {
+                position: absolute;
+                top: 75%; /* Lo coloca en la mitad inferior de la mitad inferior */
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+            }
         }
     </style>
 </head>
