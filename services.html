@@ -51,17 +51,20 @@
         /* Media query para móvil (hasta 768px) */
         @media (max-width: 768px) {
             .services-header {
-                position: relative; /* Asegura que el header ocupe su espacio */
-                height: 80vh; /* Mantiene la altura definida en styles.css */
+                position: relative; /* Flujo natural del documento */
+                height: 80vh; /* Altura fija como en styles.css */
                 margin-bottom: 0; /* Sin margen inferior */
             }
             section {
-                padding-top: 0; /* Sin padding superior */
                 margin-top: 0; /* Sin margen superior */
+                padding-top: 0; /* Sin padding superior */
             }
             .mobile-only {
-                margin: 0; /* Elimina márgenes del h2 */
-                padding-top: 10px; /* Pequeño padding para respiración visual */
+                margin: 0; /* Sin márgenes en el h2 */
+                padding: 0; /* Sin padding para pegarlo completamente */
+            }
+            .service-item:first-child {
+                margin-top: 20px; /* Espacio inicial para los servicios después del h2 */
             }
         }
         /* Media query para escritorio (más de 768px) */
@@ -74,7 +77,7 @@
                 width: 100%;
             }
             .services-header .desktop-header h1 {
-                font-size: 36px; /* Ajustado para que "EXPLORA MI MUNDO EN MOVIMIENTO" se vea bien */
+                font-size: 36px; /* Ajustado para el texto largo */
             }
             .mobile-only {
                 display: none; /* Oculta el h2 en escritorio */
