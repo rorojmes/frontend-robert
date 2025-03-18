@@ -29,22 +29,24 @@
         }
         .whatsapp-btn {
             background: #25D366; /* Verde WhatsApp */
-            color: #fff;
-            padding: 12px; /* Ajustado para que sea cuadrado con el ícono */
-            font-size: 24px; /* Tamaño del ícono */
+            padding: 10px; /* Ajustado para el tamaño de la imagen */
             border: none;
             cursor: pointer;
             transition: background 0.3s ease;
             display: block;
             margin: 40px auto 0;
-            width: 50px; /* Tamaño fijo para un botón circular */
+            width: 50px; /* Tamaño fijo para botón circular */
             height: 50px;
             border-radius: 25px; /* Esquinas redondeadas (circular) */
             text-align: center;
-            line-height: 26px; /* Centra el ícono verticalmente */
         }
         .whatsapp-btn:hover {
             background: #20B858; /* Verde más oscuro al hover */
+        }
+        .whatsapp-btn img {
+            width: 30px; /* Tamaño de la imagen dentro del botón */
+            height: 30px;
+            vertical-align: middle;
         }
     </style>
 </head>
@@ -106,7 +108,9 @@
                 <h3>Clases Online y Contenido Digital</h3>
                 <p>La danza sin fronteras. Aprende desde cualquier lugar con clases en vivo que llevan mi arte directamente a tu pantalla.</p>
             </div>
-            <a href="https://wa.me/34627186103?text=Hola%20Robert,%20me%20interesa%20saber%20más%20sobre%20tus%20servicios" target="_blank" class="whatsapp-btn">&#9993;</a>
+            <a href="https://wa.me/34627186103?text=Hola%20Robert,%20me%20interesa%20saber%20más%20sobre%20tus%20servicios" target="_blank" class="whatsapp-btn">
+                <img src="whatsapp-icon.png" alt="WhatsApp">
+            </a>
         </section>
     </main>
     <footer>
