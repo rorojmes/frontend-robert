@@ -53,7 +53,16 @@
             .services-header {
                 position: relative; /* Flujo natural del documento */
                 height: 80vh; /* Altura fija como en styles.css */
-                margin-bottom: 0; /* Sin margen inferior para que el texto quede cerca */
+                margin-bottom: 0; /* Sin margen inferior */
+                z-index: 1; /* Fondo en un plano inferior */
+            }
+            .mobile-header {
+                position: relative; /* Asegura que el texto esté en el flujo */
+                z-index: 2; /* Texto por encima de la imagen de fondo */
+            }
+            .mobile-header h1 {
+                position: relative; /* Texto en el flujo natural */
+                z-index: 2; /* Asegura que las letras estén delante */
             }
             section {
                 padding-top: 0; /* Sin padding superior */
@@ -62,7 +71,7 @@
             .mobile-only {
                 margin: 0; /* Sin márgenes */
                 padding: 0; /* Sin padding para pegarlo a la foto */
-                position: relative; /* Sigue el flujo natural, no absoluto */
+                position: relative; /* Sigue el flujo natural */
                 text-align: center; /* Centra el texto */
             }
             .service-item:first-child {
