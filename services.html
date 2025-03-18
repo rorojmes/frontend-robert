@@ -12,7 +12,7 @@
         }
         /* Estilos específicos para services.html */
         section {
-            padding-top: 0; /* Por defecto sin espacio en escritorio */
+            padding-top: 0; /* Sin espacio en escritorio por defecto */
         }
         .service-item {
             margin-bottom: 40px;
@@ -51,14 +51,17 @@
         /* Media query para móvil (hasta 768px) */
         @media (max-width: 768px) {
             .services-header {
-                margin-bottom: 0; /* Elimina cualquier margen inferior del header */
+                position: relative; /* Asegura que el header ocupe su espacio */
+                height: 80vh; /* Mantiene la altura definida en styles.css */
+                margin-bottom: 0; /* Sin margen inferior */
             }
             section {
-                padding-top: 0; /* Sin padding-top en móvil */
-                margin-top: 0; /* Elimina cualquier margen superior */
+                padding-top: 0; /* Sin padding superior */
+                margin-top: 0; /* Sin margen superior */
             }
             .mobile-only {
-                margin-top: 0; /* Asegura que el h2 no tenga margen superior */
+                margin: 0; /* Elimina márgenes del h2 */
+                padding-top: 10px; /* Pequeño padding para respiración visual */
             }
         }
         /* Media query para escritorio (más de 768px) */
