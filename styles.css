@@ -61,7 +61,7 @@ nav a:hover, nav a.active {
     background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%), url('header-bg.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: fixed; /* Efecto que te gusta */
     position: relative;
     z-index: 10;
     opacity: 0;
@@ -105,11 +105,6 @@ header {
     height: 100%;
 }
 
-.desktop-header h1, .mobile-header h1 {
-    font-family: 'Dancing Script', cursive;
-    font-weight: 700;
-}
-
 .mobile-header {
     display: none;
 }
@@ -130,7 +125,6 @@ section {
 }
 
 section h2 {
-    font-family: 'Dancing Script', cursive;
     font-size: 36px;
     font-weight: 700;
     color: #FFD700;
@@ -141,18 +135,18 @@ section h2 {
 }
 
 section h3 {
-    font-size: 24px;
+    font-size: 28px; /* Aumentado para servicios */
     font-weight: 400;
     color: #FFD700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    margin-bottom: 15px;
+    margin-bottom: 20px; /* Desplazado hacia abajo */
     text-align: center;
 }
 
 section em {
     font-style: italic;
-    color: #FFC107;
+    color: #FFD700;
 }
 
 section p, section li {
@@ -184,7 +178,6 @@ section p, section li {
 
 .marquee-text {
     display: inline-block;
-    font-family: 'Dancing Script', cursive;
     font-size: 72px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -196,7 +189,6 @@ section p, section li {
 .marquee-wrapper::before,
 .marquee-wrapper::after {
     content: "La Libertad De Bailar";
-    font-family: 'Dancing Script', cursive;
     font-size: 72px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -275,36 +267,6 @@ footer a:hover {
 
 .gallery img:hover, .gallery iframe:hover {
     transform: scale(1.05);
-}
-
-.testimonials {
-    padding: 40px 20px;
-    background: linear-gradient(135deg, #000, #1a1a1a);
-}
-
-.testimonial {
-    max-width: 700px;
-    margin: 20px auto;
-    font-style: italic;
-    color: #FFD700;
-}
-
-.scroll-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #FFD700;
-    color: #000;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 100;
-}
-
-.scroll-top.visible {
-    opacity: 1;
 }
 
 /* Menú móvil */
@@ -425,11 +387,12 @@ footer a:hover {
     .secondary-header h1, .services-header h1 { font-size: 42px; }
     .marquee-text, .marquee-wrapper::before, .marquee-wrapper::after { font-size: 64px; padding-right: 7ch; }
     section h2 { font-size: 32px; }
-    section h3 { font-size: 20px; }
+    section h3 { font-size: 24px; } /* Tamaño original en otras secciones */
     section p, section li { font-size: 16px; margin-bottom: 40px; }
     .home-summary p { font-size: 20px; }
     section { padding-top: 100px; }
     .menu-toggle { display: none; }
+    .desktop-header { position: absolute; top: 65%; transform: translateY(-50%); } /* Desplazado más abajo */
 }
 
 /* Móvil */
@@ -439,13 +402,18 @@ footer a:hover {
     nav a { margin: 0 15px; font-size: 14px; }
     section h2 { font-size: 28px; }
     section p, section li { font-size: 16px; }
-    .header-index, .secondary-header, .services-header { height: 80vh; }
+    .header-index, .secondary-header, .services-header { 
+        height: 80vh; 
+        background-size: contain; /* Ajusta la imagen sin cortarla */
+        background-repeat: no-repeat; /* Evita repetición */
+        background-position: center center; /* Centra completamente */
+    }
     .desktop-header { display: none; }
     .mobile-header { display: flex; justify-content: space-between; align-items: center; padding: 20px; width: 100%; }
     .mobile-header h1 { font-size: 24px; padding-left: 10px; }
     .mobile-only { display: flex; font-size: 32px !important; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; text-align: center; flex-direction: column; }
     .mobile-only span { display: block; }
-    .services-header { background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 90%), url('header-2.png'); background-position: center 20%; }
+    .services-header { background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 90%), url('header-2.png'); background-size: contain; background-position: center center; }
     nav { padding: 0; }
     .menu-toggle { display: block; margin-top: 20px; margin-right: 40px; }
     .nav-links { display: none; }
