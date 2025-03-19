@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Robert Mesa, bailarín profesional de danza contemporánea con más de 9 años de experiencia en Cuba y Europa.">
     <title>Robert Mesa - Bailarín Profesional</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <style>
         .menu-toggle {
             -webkit-tap-highlight-color: transparent !important;
@@ -56,15 +58,23 @@
         <section class="home-summary">
             <p>Robert Mesa, bailarín contemporáneo con más de nueve años de trayectoria, fusiona la esencia de la danza cubana con la danza moderna actual. Formado en la Escuela Vocacional de Artes de Cuba, la Escuela Nacional de Arte (ENA) y Danza Contemporánea de Cuba, ha colaborado con coreógrafos destacados y ha bailado en escenarios de Cuba y Europa obras de Danza Contemporánea, Ballet y Comercial Dance.</p>
         </section>
+        <section class="testimonials">
+            <h2>Voces del Movimiento</h2>
+            <div class="testimonial">
+                <p>"Robert lleva la danza a otro nivel, una experiencia única." - María, alumna</p>
+            </div>
+        </section>
     </main>
     <footer>
         <p>© 2025 Robert Mesa | <a href="mailto:rorojmes@gmail.com">rorojmes@gmail.com</a> | <a href="tel:+34627186103">+34 627 186 103</a> | <a href="https://instagram.com/roro_cuba" target="_blank">@roro_cuba</a></p>
     </footer>
+    <button class="scroll-top">↑</button>
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const navMenu = document.querySelector('.nav-menu');
         const overlay = document.querySelector('.overlay');
         const body = document.querySelector('body');
+        const scrollTop = document.querySelector('.scroll-top');
 
         menuToggle.addEventListener('click', () => {
             if (navMenu.classList.contains('active')) {
@@ -85,6 +95,14 @@
                 }, 10);
             }
             menuToggle.classList.toggle('active');
+        });
+
+        window.addEventListener('scroll', () => {
+            scrollTop.classList.toggle('visible', window.scrollY > 300);
+        });
+
+        scrollTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 </body>
