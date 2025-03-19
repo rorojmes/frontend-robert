@@ -10,89 +10,47 @@
             -webkit-tap-highlight-color: transparent !important;
             background: transparent !important;
         }
-        /* Estilos específicos para services.html */
-        section {
-            padding-top: 0; /* Sin espacio en escritorio por defecto */
-        }
-        .service-item {
-            margin-bottom: 40px;
-            text-align: center;
-        }
+        section { padding-top: 0; }
+        .service-item { margin-bottom: 40px; text-align: center; }
         .service-item h3 {
-            color: #FFD700; /* Dorado para destacar los títulos */
-            margin-bottom: 15px;
+            color: #FFD700;
+            margin-bottom: 20px; /* Desplazado un poco hacia abajo */
+            font-size: 28px; /* Tamaño aumentado */
         }
-        .service-item p {
-            max-width: 700px;
-            margin: 0 auto;
-            font-style: italic; /* Itálica para un toque artístico */
-        }
+        .service-item p { max-width: 700px; margin: 0 auto; font-style: italic; }
         .whatsapp-btn {
-            background: #25D366; /* Verde WhatsApp */
-            padding: 10px; /* Ajustado para el tamaño de la imagen */
+            background: #25D366;
+            padding: 10px;
             border: none;
             cursor: pointer;
             transition: background 0.3s ease;
             display: block;
             margin: 40px auto 0;
-            width: 50px; /* Tamaño fijo para botón circular */
+            width: 50px;
             height: 50px;
-            border-radius: 25px; /* Esquinas redondeadas (circular) */
+            border-radius: 25px;
             text-align: center;
         }
-        .whatsapp-btn:hover {
-            background: #20B858; /* Verde más oscuro al hover */
-        }
-        .whatsapp-btn img {
-            width: 30px; /* Tamaño de la imagen dentro del botón */
-            height: 30px;
-            vertical-align: middle;
-        }
-        /* Media query para móvil (hasta 768px) */
+        .whatsapp-btn:hover { background: #20B858; }
+        .whatsapp-btn img { width: 30px; height: 30px; vertical-align: middle; }
         @media (max-width: 768px) {
-            .services-header {
-                position: relative; /* Flujo natural del documento */
-                height: 80vh; /* Altura fija como en styles.css */
-                margin-bottom: 0; /* Sin margen inferior */
-                z-index: 1; /* Fondo en un plano inferior */
-            }
-            .mobile-header {
-                position: relative; /* Asegura que el texto esté en el flujo */
-                z-index: 2; /* Texto por encima de la imagen de fondo */
-            }
-            .mobile-header h1 {
-                position: relative; /* Texto en el flujo natural */
-                z-index: 2; /* Asegura que las letras estén delante */
-            }
-            section {
-                padding-top: 0; /* Sin padding superior */
-                margin-top: 0; /* Sin margen superior */
-            }
-            .mobile-only {
-                margin: 0; /* Sin márgenes */
-                padding: 0; /* Sin padding para pegarlo a la foto */
-                position: relative; /* Sigue el flujo natural */
-                text-align: center; /* Centra el texto */
-            }
-            .service-item:first-child {
-                margin-top: 20px; /* Espacio entre el h2 y el primer servicio */
-            }
+            .services-header { position: relative; height: 80vh; margin-bottom: 0; z-index: 1; }
+            .mobile-header { position: relative; z-index: 2; }
+            .mobile-header h1 { position: relative; z-index: 2; }
+            section { padding-top: 0; margin-top: 0; }
+            .mobile-only { margin: 0; padding: 0; position: relative; text-align: center; }
+            .service-item:first-child { margin-top: 20px; }
         }
-        /* Media query para escritorio (más de 768px) */
         @media (min-width: 769px) {
             .services-header .desktop-header {
                 position: absolute;
-                top: 75%; /* Centro de la mitad inferior de la mitad de la foto */
+                top: 75%; /* Posición original */
                 left: 50%;
                 transform: translate(-50%, -50%);
                 width: 100%;
             }
-            .services-header .desktop-header h1 {
-                font-size: 36px; /* Ajustado para el texto largo */
-            }
-            .mobile-only {
-                display: none; /* Oculta el h2 en escritorio */
-            }
+            .services-header .desktop-header h1 { font-size: 36px; }
+            .mobile-only { display: none; }
         }
     </style>
 </head>
