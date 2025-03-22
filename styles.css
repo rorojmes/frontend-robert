@@ -235,7 +235,6 @@ footer a:hover {
 .gallery .video-container {
     position: relative;
     overflow: hidden;
-    border: 2px solid #FFD700; /* Borde dorado */
     transition: transform 0.4s ease;
 }
 .gallery .video-container:hover {
@@ -252,6 +251,7 @@ footer a:hover {
 .gallery .video-container.horizontal {
     padding-bottom: 56.25%; /* 9/16 = 0.5625 */
     height: 0;
+    width: 100%; /* Asegura que use el ancho completo disponible */
 }
 /* Video vertical (9:16) */
 .gallery .video-container.vertical {
