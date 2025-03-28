@@ -10,48 +10,6 @@
             -webkit-tap-highlight-color: transparent !important;
             background: transparent !important;
         }
-        section { padding-top: 0; }
-        .service-item { margin-bottom: 40px; text-align: center; }
-        .service-item h3 {
-            color: #FFD700;
-            margin-bottom: 20px; /* Desplazado un poco hacia abajo */
-            font-size: 28px; /* Tamaño aumentado */
-        }
-        .service-item p { max-width: 700px; margin: 0 auto; font-style: italic; }
-        .whatsapp-btn {
-            background: #25D366;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            display: block;
-            margin: 40px auto 0;
-            width: 50px;
-            height: 50px;
-            border-radius: 25px;
-            text-align: center;
-        }
-        .whatsapp-btn:hover { background: #20B858; }
-        .whatsapp-btn img { width: 30px; height: 30px; vertical-align: middle; }
-        @media (max-width: 768px) {
-            .services-header { position: relative; height: 80vh; margin-bottom: 0; z-index: 1; }
-            .mobile-header { position: relative; z-index: 2; }
-            .mobile-header h1 { position: relative; z-index: 2; }
-            section { padding-top: 0; margin-top: 0; }
-            .mobile-only { margin: 0; padding: 0; position: relative; text-align: center; }
-            .service-item:first-child { margin-top: 20px; }
-        }
-        @media (min-width: 769px) {
-            .services-header .desktop-header {
-                position: absolute;
-                top: 75%; /* Posición original */
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 100%;
-            }
-            .services-header .desktop-header h1 { font-size: 36px; }
-            .mobile-only { display: none; }
-        }
     </style>
 </head>
 <body>
@@ -78,49 +36,29 @@
     <main>
         <header class="services-header">
             <div class="header-content">
-                <div class="desktop-header">
-                    <h1>Explora Mi Mundo en Movimiento</h1>
-                </div>
-                <div class="mobile-header">
-                    <h1>Servicios</h1>
-                </div>
+                <h1>Servicios</h1>
+                <p>Clases, Coreografías y Actuaciones</p>
             </div>
         </header>
         <section>
-            <h2 class="mobile-only">Explora Mi Mundo en Movimiento</h2>
             <div class="service-item">
                 <h3>Clases de Danza</h3>
-                <p>Descubre tu libertad en el movimiento. Clases que fusionan la técnica cubana con la danza contemporánea, desde sesiones privadas para perfeccionar tu arte hasta grupos que despiertan la pasión por bailar.</p>
+                <p>Ofrezco clases personalizadas de danza contemporánea y comercial para todos los niveles.</p>
             </div>
             <div class="service-item">
-                <h3>Coreografías Personalizadas</h3>
-                <p>Tejo historias en cada paso. Creo coreografías únicas para escenarios, eventos o proyectos audiovisuales, llevando la esencia de la danza moderna y contemporánea a un lenguaje universal que emociona.</p>
+                <h3>Coreografías</h3>
+                <p>Creación de coreografías únicas para eventos, espectáculos o competencias.</p>
             </div>
             <div class="service-item">
-                <h3>Talleres y Master Classes</h3>
-                <p>Inmersión total en la danza. Talleres intensivos donde la técnica, la improvisación y mi experiencia internacional se unen para inspirarte y elevar tu expresión artística.</p>
+                <h3>Actuaciones</h3>
+                <p>Presentaciones profesionales en eventos culturales, teatros y más.</p>
             </div>
-            <div class="service-item">
-                <h3>Asesoría y Coaching</h3>
-                <p>Tu camino al éxito empieza aquí. Coaching personalizado para audiciones, técnica o desarrollo profesional, guiado por mi viaje de Cuba a Europa.</p>
-            </div>
-            <div class="service-item">
-                <h3>Actuaciones y Colaboraciones</h3>
-                <p>El escenario cobra vida conmigo. Ofrezco actuaciones vibrantes y colaboraciones con artistas, fusionando pasión cubana y creatividad contemporánea para eventos o proyectos únicos.</p>
-            </div>
-            <div class="service-item">
-                <h3>Clases Online y Contenido Digital</h3>
-                <p>La danza sin fronteras. Aprende desde cualquier lugar con clases en vivo que llevan mi arte directamente a tu pantalla.</p>
-            </div>
-            <a href="https://wa.me/34627186103?text=Hola%20Robert,%20me%20interesa%20saber%20más%20sobre%20tus%20servicios" target="_blank" class="whatsapp-btn">
-                <img src="whatsapp-icon.png" alt="WhatsApp">
-            </a>
         </section>
     </main>
     <footer>
         <p>© 2025 Robert Mesa | <a href="mailto:rorojmes@gmail.com">rorojmes@gmail.com</a> | <a href="tel:+34627186103">+34 627 186 103</a> | <a href="https://instagram.com/roro_cuba" target="_blank">@roro_cuba</a></p>
     </footer>
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         const menuToggle = document.querySelector('.menu-toggle');
         const navMenu = document.querySelector('.nav-menu');
         const overlay = document.querySelector('.overlay');
