@@ -62,7 +62,7 @@ header {
 }
 .services-header {
     height: 100vh;
-    background: url('header-2.png');
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%), url('header-2.png');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -73,18 +73,23 @@ header {
 .header-content {
     position: absolute;
     width: 100%;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    top: 0;
+    left: 0;
     z-index: 12;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.header-content h1 {
-    font-size: 56px;
-    margin-bottom: 15px;
+.desktop-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
-.header-content p {
-    font-size: 24px;
+.mobile-header {
+    display: none;
 }
 main {
     flex: 1;
@@ -226,32 +231,6 @@ footer a:hover {
 .gallery img:hover {
     transform: scale(1.05);
 }
-.gallery .video-container {
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.4s ease;
-}
-.gallery .video-container:hover {
-    transform: scale(1.05);
-}
-.gallery .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-.gallery .video-container.horizontal {
-    padding-bottom: 56.25%;
-    height: 0;
-    width: 100%;
-}
-.gallery .video-container.vertical {
-    padding-bottom: 177.78%;
-    height: 0;
-    max-width: 250px;
-    margin: 0 auto;
-}
 form {
     display: flex;
     flex-direction: column;
@@ -267,6 +246,8 @@ input, textarea {
     color: #fff;
     border-radius: 0;
 }
+
+/* Menú móvil */
 .menu-toggle {
     width: 30px;
     height: 20px;
@@ -375,7 +356,11 @@ input, textarea {
 }
 .mobile-only {
     display: none;
+    font-size: 32px; /* Valor por defecto para evitar herencias */
+    line-height: 1.1; /* Normalizo para consistencia */
 }
+
+/* Animaciones */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -388,6 +373,8 @@ input, textarea {
     0% { transform: translateX(0); }
     100% { transform: translateX(-33.33%); }
 }
+
+/* Escritorio */
 @media (min-width: 769px) {
     body {
         min-height: 100vh;
@@ -410,14 +397,22 @@ input, textarea {
         justify-content: center;
         align-items: center;
     }
-    .services-header {
-        height: 100vh;
+    .desktop-header {
+        display: flex;
     }
-    .header-content h1 {
+    .mobile-header {
+        display: none;
+    }
+    .header-index h1 {
         font-size: 56px;
+        margin-bottom: 15px;
     }
-    .header-content p {
+    .header-index p {
         font-size: 24px;
+    }
+    .secondary-header h1, .services-header h1 {
+        font-size: 42px;
+        margin-bottom: 0;
     }
     .marquee-text {
         font-size: 64px;
@@ -440,7 +435,6 @@ input, textarea {
     }
     .home-summary p {
         font-size: 20px;
-        margin-bottom: 60px;
     }
     section {
         margin: 0 auto;
@@ -459,52 +453,59 @@ input, textarea {
     .nav-links {
         display: flex;
     }
-    .service-item h3 {
-        font-size: 28px;
-        margin-bottom: 20px;
-    }
 }
+
+/* Móvil (amplío a 768px para cubrir más dispositivos) */
 @media (max-width: 768px) {
-    .header-index, .services-header {
+    .header-index h1, .secondary-header h1 { font-size: 36px; }
+    .header-index p, .secondary-header p { font-size: 16px; }
+    nav a { margin: 0 15px; font-size: 14px; }
+    section h2 { font-size: 28px; }
+    section p, section li { font-size: 16px; }
+    section { margin: 0 10px; }
+
+    .header-index, .secondary-header, .services-header { 
         height: 80vh;
-        background-size: contain;
-        background-position: center center;
-        background-repeat: no-repeat;
+        justify-content: center;
+        padding-bottom: 0;
     }
-    .header-index {
-        background: url('header-bg.jpg');
+    .desktop-header {
+        display: none;
     }
-    .services-header {
-        background: url('header-2.png');
+    .mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        width: 100%;
     }
-    .header-content {
+    .mobile-header h1 {
+        font-size: 24px;
+        margin: 0;
+        padding-left: 10px;
+    }
+    .mobile-only {
+        display: flex;
+        font-size: 32px !important; /* Forzamos 32px */
+        position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        line-height: 1.1;
+        flex-direction: column;
     }
-    .header-content h1 {
-        font-size: 36px;
+    .mobile-only span {
+        display: block;
     }
-    .header-content p {
-        font-size: 16px;
+    .services-header {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 90%), url('header-2.png');
+        background-size: cover;
+        background-position: center 20%;
     }
-    nav a {
-        margin: 0 15px;
-        font-size: 14px;
-    }
-    section h2 {
-        font-size: 28px;
-    }
-    section p, section li {
-        font-size: 16px;
-    }
-    section {
-        margin: 0 20px;
-        padding: 20px;
-    }
-    nav {
-        padding: 0;
-    }
+    nav { padding: 0; }
     .menu-toggle {
         display: block;
         margin-top: 20px;
@@ -513,19 +514,13 @@ input, textarea {
     .nav-links {
         display: none;
     }
-    button, input[type="submit"] {
-        font-size: 14px;
-        padding: 10px 20px;
-    }
+    button, input[type="submit"] { font-size: 14px; padding: 10px 20px; }
     footer {
         font-size: 14px;
         padding: 20px;
         position: relative;
     }
-    footer a {
-        display: inline-block;
-        margin: 5px 5px;
-    }
+    footer a { display: inline-block; margin: 5px 5px; }
     .home-title {
         padding: 10px 0;
         display: block;
@@ -540,19 +535,9 @@ input, textarea {
         font-size: 36px;
         padding-right: 5ch;
     }
-    .marquee-wrapper {
-        animation: marquee 20s linear infinite;
-    }
     .marquee-wrapper::before,
     .marquee-wrapper::after {
         font-size: 36px;
         padding-right: 5ch;
-    }
-    .home-summary p {
-        margin-bottom: 40px;
-    }
-    .service-item h3 {
-        font-size: 28px;
-        margin-bottom: 20px;
     }
 }
